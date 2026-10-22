@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 export type ExploreView = 'graph' | 'memories' | 'vocabulary';
 
 type ExploreWorkspaceTabsProps = {
@@ -11,18 +12,19 @@ export function ExploreWorkspaceTabs({
   agentMemoryAvailable,
   onSelect,
 }: ExploreWorkspaceTabsProps) {
+  const { t } = useTranslation("shell");
   return (
     <>
       <button className="workspace-tab" data-active={activeView === 'graph'} onClick={() => onSelect('graph')}>
-        Semantica Explorer
+        {t("exploreTabs.graph")}
       </button>
       {agentMemoryAvailable ? (
         <button className="workspace-tab" data-active={activeView === 'memories'} onClick={() => onSelect('memories')}>
-          Memories
+          {t("exploreTabs.memories")}
         </button>
       ) : null}
       <button className="workspace-tab" data-active={activeView === 'vocabulary'} onClick={() => onSelect('vocabulary')}>
-        Vocabulary Browser
+        {t("exploreTabs.vocabulary")}
       </button>
     </>
   );

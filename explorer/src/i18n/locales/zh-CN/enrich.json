@@ -1,0 +1,53 @@
+{
+  "resolution": {
+    "dismiss": "关闭",
+    "primaryKeep": "主项(保留)",
+    "duplicateRemove": "重复项(移除)",
+    "scanFailedWithStatus": "扫描失败({{status}})",
+    "dedupFound": "去重扫描发现 {{count}} 对标记项(阈值 {{threshold}})",
+    "scanFailed": "扫描失败",
+    "partialMerge": "警告:部分合并成功。",
+    "merge": "合并",
+    "merging": "扫描中…",
+    "title": "实体消解",
+    "subtitle": "检测并合并知识图谱中的重复实体",
+    "threshold": "相似度阈值",
+    "moreResults": "更多结果(0.50)",
+    "fewerResults": "更少、更高置信度(0.99)",
+    "runScan": "运行去重扫描",
+    "scanning": "扫描中…",
+    "clearAll": "全部清除",
+    "flaggedPairs_one": "{{count}} 对标记项",
+    "flaggedPairs_other": "{{count}} 对标记项",
+    "noPairs": "无标记项",
+    "noPairsHint": "设置相似度阈值并运行去重扫描,以检测潜在重复项。",
+    "mergeFailedWithStatus": "合并失败({{status}})",
+    "mergedLog": "已合并 {{from}} → {{to}} · {{edges}} 条边已重定向",
+    "mergeFailed": "合并失败",
+    "mergeHistory": "合并历史"
+  },
+  "registry": {
+    "ops": {
+      "import": "导入",
+      "export": "导出",
+      "merge": "合并",
+      "addNode": "新增节点",
+      "updateNode": "更新节点",
+      "addEdge": "新增边",
+      "delete": "删除",
+      "infer": "推导",
+      "vocabImport": "词表",
+      "all": "全部"
+    },
+    "collapseDetails": "收起详情",
+    "expandDetails": "展开详情",
+    "title": "文档注册表",
+    "subtitle": "本次会话中所有 KG 与本体变更的审计日志",
+    "clearAllTitle": "清除所有事件",
+    "clear": "清除",
+    "eventCount_one": "{{count}} 个事件",
+    "eventCount_other": "{{count}} 个事件",
+    "noEvents": "暂无事件记录",
+    "noEventsHint": "导入文件、运行推理或合并实体后,活动将显示在此处。"
+  }
+}

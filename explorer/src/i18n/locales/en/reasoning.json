@@ -1,0 +1,33 @@
+{
+  "templates": {
+    "drugCandidate": "Drug Candidate",
+    "geneDisease": "Gene → Disease",
+    "pathwayActivation": "Pathway Activation"
+  },
+  "status": "Status {{status}}",
+  "partialReasoning": "Warning: Partial success reasoning.",
+  "reasoningFailed": "Reasoning failed",
+  "forwardChaining": "Forward Chaining",
+  "inferenceEngine": "Inference Engine",
+  "quickTemplates": "Quick Templates",
+  "facts": "Facts",
+  "factsHint": "One fact per line using predicate(subject, object) form.",
+  "rules": "Rules",
+  "rulesHint": "Use IF … AND … THEN … syntax. Falls back to internal matcher if the reasoning server is unavailable.",
+  "writeToGraph": "Write inferred facts to graph",
+  "writeToGraphHint": "Inferred binary facts are added as edges",
+  "running": "Running…",
+  "runReasoning": "Run Reasoning",
+  "resetTitle": "Reset to defaults",
+  "inferenceResults": "Inference Results",
+  "rulesFired_one": "{{count}} rule fired",
+  "rulesFired_other": "{{count}} rules fired",
+  "edgesAdded_one": "{{count}} edge added",
+  "edgesAdded_other": "{{count}} edges added",
+  "graphUpdated": "graph updated",
+  "previewOnly": "preview only",
+  "complete": "Reasoning complete",
+  "noNewFacts": "No new facts were inferred from the current rule set and facts.",
+  "ready": "Ready to reason",
+  "readyHint": "Enter facts and rules on the left, then click Run Reasoning to see inferred statements here."
+}

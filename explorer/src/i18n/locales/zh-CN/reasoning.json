@@ -1,0 +1,33 @@
+{
+  "templates": {
+    "drugCandidate": "药物候选",
+    "geneDisease": "基因 → 疾病",
+    "pathwayActivation": "通路激活"
+  },
+  "status": "状态 {{status}}",
+  "partialReasoning": "警告:部分推理成功。",
+  "reasoningFailed": "推理失败",
+  "forwardChaining": "前向链",
+  "inferenceEngine": "推理引擎",
+  "quickTemplates": "快捷模板",
+  "facts": "事实",
+  "factsHint": "每行一条事实,使用 predicate(subject, object) 形式。",
+  "rules": "规则",
+  "rulesHint": "使用 IF … AND … THEN … 语法。推理服务不可用时回退到内部匹配器。",
+  "writeToGraph": "将推导事实写入图",
+  "writeToGraphHint": "推导出的二元事实将作为边添加",
+  "running": "运行中…",
+  "runReasoning": "运行推理",
+  "resetTitle": "重置为默认值",
+  "inferenceResults": "推理结果",
+  "rulesFired_one": "触发 {{count}} 条规则",
+  "rulesFired_other": "触发 {{count}} 条规则",
+  "edgesAdded_one": "已添加 {{count}} 条边",
+  "edgesAdded_other": "已添加 {{count}} 条边",
+  "graphUpdated": "图已更新",
+  "previewOnly": "仅预览",
+  "complete": "推理完成",
+  "noNewFacts": "当前规则集和事实未推导出新事实。",
+  "ready": "准备推理",
+  "readyHint": "在左侧输入事实和规则,然后点击「运行推理」查看推导出的语句。"
+}

@@ -1,0 +1,38 @@
+.language-switcher {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.language-switcher-option {
+  min-height: 32px;
+  padding: 0 4px;
+  border-radius: 10px;
+  border: 1px solid rgba(127, 208, 255, 0.18);
+  background: rgba(74, 163, 255, 0.08);
+  color: var(--text-muted, #8fa8c6);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.language-switcher-option:hover {
+  background: rgba(74, 163, 255, 0.16);
+  border-color: rgba(127, 208, 255, 0.32);
+}
+
+.language-switcher-option[data-active='true'] {
+  color: var(--text-main, #ebf3ff);
+  border-color: rgba(127, 208, 255, 0.45);
+  background: rgba(74, 163, 255, 0.24);
+}
+
+.language-switcher-option:focus-visible {
+  outline: 2px solid var(--accent-strong, #7fd0ff);
+  outline-offset: 2px;
+}

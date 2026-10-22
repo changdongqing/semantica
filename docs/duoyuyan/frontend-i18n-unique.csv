@@ -1,0 +1,63 @@
+text,confidence,kinds,occurrences,files,templated
+Entity,medium,string,4,4,False
+"IF inhibits(Metformin, mTOR) AND causes(mTOR, Neurodegeneration) THEN candidate(Metformin, Alzheimer's)",high,string,2,1,False
+"inset 0 1px 0 rgba(255,255,255,0.03)",high,string,2,2,False
+"inset 0 1px 0 rgba(255,255,255,0.07), 0 10px 24px rgba(0,0,0,0.18)",high,string,2,2,False
+"linear-gradient(135deg, rgba(11,25,42,0.94), rgba(7,14,25,0.9))",high,string,2,2,False
+"linear-gradient(135deg, rgba(13,17,23,0.6), rgba(22,27,34,0.4))",high,string,2,2,False
+"linear-gradient(180deg, rgba(1,4,9,0.22), rgba(1,4,9,0.5))",high,string,2,1,False
+) : t(,high,string,1,1,False
+0 && graphSummary.nodeCount,high,jsx_text,1,1,False
+: conforms ?,high,string,1,1,False
+AgentMemory,high,jsx_text,1,1,False
+ArrowLeft,medium,string,1,1,False
+ArrowRight,medium,string,1,1,False
+Biomolecule,medium,string,1,1,False
+Community,medium,string,1,1,False
+Compound,medium,string,1,1,False
+Condition,medium,string,1,1,False
+Country,medium,string,1,1,False
+End,medium,string,1,1,False
+Founded,medium,string,1,1,False
+Graph node refresh failed ({{var}}).,high,string,1,1,True
+Graph node refresh returned a different resource.,high,string,1,1,False
+Home,medium,string,1,1,False
+"IF activates(X, EGFR) AND downstream_of(Y, EGFR) THEN activates(X, Y)",high,string,1,1,False
+"IF mutated_in(X, Cancer) AND expressed_in(X, Y) THEN risk_gene(X, Y)",high,string,1,1,False
+Name,medium,string,1,1,False
+Organisation,medium,string,1,1,False
+Organization,medium,string,1,1,False
+Process,medium,string,1,1,False
+Sample Company,high,string,1,1,False
+Sample Company Inc.,high,string,1,1,False
+Type,medium,string,1,1,False
+e.g. n-dup-2,high,attr,1,1,False
+e.g. n-primary-1,high,attr,1,1,False
+"inset 0 1px 0 rgba(255,255,255,0.035)",high,string,1,1,False
+"inset 0 1px 0 rgba(255,255,255,0.04)",high,string,1,1,False
+"inset 0 1px 0 rgba(255,255,255,0.045)",high,string,1,1,False
+"linear-gradient(135deg, rgba(13,17,23,0.75), rgba(22,27,34,0.6))",high,string,1,1,False
+"linear-gradient(135deg, rgba(20,151,136,0.55), rgba(74,163,255,0.35))",high,string,1,1,False
+"linear-gradient(135deg, rgba(242,182,109,0.22), rgba(242,182,109,0.1))",high,string,1,1,False
+"linear-gradient(135deg, rgba(27, 79, 170, 0.9), rgba(53, 123, 255, 0.84))",high,string,1,1,False
+"linear-gradient(135deg, rgba(6, 15, 27, 0.88), rgba(11, 22, 39, 0.76))",high,string,1,1,False
+"linear-gradient(135deg, rgba(74, 163, 255, 0.15), rgba(74, 163, 255, 0.05))",high,string,1,1,False
+"linear-gradient(135deg, rgba(74,163,255,0.2), rgba(74,163,255,0.08))",high,string,1,1,False
+"linear-gradient(135deg, rgba(74,163,255,0.2), rgba(74,163,255,0.1))",high,string,1,1,False
+"linear-gradient(135deg, rgba(98, 226, 205, 0.09), rgba(227, 179, 65, 0.045))",high,string,1,1,False
+"linear-gradient(135deg, rgba(98, 226, 205, 0.1), rgba(233, 196, 122, 0.045))",high,string,1,1,False
+"linear-gradient(180deg, #0B0E12 0%, #07080B 100%)",high,string,1,1,False
+"linear-gradient(180deg, rgba(1,4,9,0.04), rgba(1,4,9,0.18))",high,string,1,1,False
+"linear-gradient(180deg, rgba(11,21,34,0.98), rgba(6,13,22,0.96))",high,string,1,1,False
+"linear-gradient(180deg, rgba(14, 18, 24, 0.86), rgba(8, 11, 15, 0.92))",high,string,1,1,False
+"linear-gradient(180deg, rgba(21, 24, 30, 0.92), rgba(12, 14, 18, 0.9))",high,string,1,1,False
+"linear-gradient(180deg, rgba(23, 26, 31, 0.72), rgba(13, 15, 19, 0.64))",high,string,1,1,False
+"linear-gradient(180deg, rgba(28, 31, 36, 0.88), rgba(16, 18, 23, 0.78))",high,string,1,1,False
+"linear-gradient(180deg, rgba(34, 37, 43, 0.94), rgba(18, 21, 26, 0.9))",high,string,1,1,False
+"linear-gradient(180deg, rgba(55, 145, 132, 0.42), rgba(24, 86, 88, 0.28))",high,string,1,1,False
+"linear-gradient(180deg, rgba(74, 181, 166, 0.24), rgba(38, 118, 116, 0.18))",high,string,1,1,False
+noopener noreferrer,high,string,1,1,False
+"radial-gradient(circle at 50% 18%, rgba(88, 224, 204, 0.07), transparent 30%), radial-gradient(circle at 78% 0%, rgba(217, 168, 92, 0.055), transparent 26%)",high,string,1,1,False
+"radial-gradient(ellipse 60% 40% at 70% 20%, rgba(74,163,255,0.04), transparent 55%)",high,string,1,1,False
+"radial-gradient(ellipse at center, transparent 42%, rgba(2, 3, 5, 0.82) 100%)",high,string,1,1,False
+"radial-gradient(ellipse at top right, rgba(210,168,255,0.04), transparent 60%)",high,string,1,1,False

@@ -1,0 +1,72 @@
+file,line,kind,confidence,attr,text,key
+explorer/src/workspaces/DecisionWorkspace/DecisionWorkspace.tsx,235,string,high,,"radial-gradient(ellipse 60% 40% at 70% 20%, rgba(74,163,255,0.04), transparent 55%)",workspaces.decisionworkspace.decisionworkspace.radial-gradient-ellipse-60-40-at
+explorer/src/workspaces/DiffMergeWorkspace/DiffMergeWorkspace.tsx,9,string,medium,,Name,workspaces.diffmergeworkspace.diffmergeworkspace.name
+explorer/src/workspaces/DiffMergeWorkspace/DiffMergeWorkspace.tsx,9,string,high,,Sample Company Inc.,workspaces.diffmergeworkspace.diffmergeworkspace.sample-company-inc
+explorer/src/workspaces/DiffMergeWorkspace/DiffMergeWorkspace.tsx,9,string,high,,Sample Company,workspaces.diffmergeworkspace.diffmergeworkspace.sample-company
+explorer/src/workspaces/DiffMergeWorkspace/DiffMergeWorkspace.tsx,10,string,medium,,Founded,workspaces.diffmergeworkspace.diffmergeworkspace.founded
+explorer/src/workspaces/DiffMergeWorkspace/DiffMergeWorkspace.tsx,11,string,medium,,Type,workspaces.diffmergeworkspace.diffmergeworkspace.type
+explorer/src/workspaces/DiffMergeWorkspace/DiffMergeWorkspace.tsx,11,string,medium,,Organization,workspaces.diffmergeworkspace.diffmergeworkspace.organization
+explorer/src/workspaces/DiffMergeWorkspace/DiffMergeWorkspace.tsx,11,string,medium,,Organisation,workspaces.diffmergeworkspace.diffmergeworkspace.organisation
+explorer/src/workspaces/DiffMergeWorkspace/DiffMergeWorkspace.tsx,12,string,medium,,Country,workspaces.diffmergeworkspace.diffmergeworkspace.country
+explorer/src/workspaces/DiffMergeWorkspace/DiffMergeWorkspace.tsx,65,attr,high,placeholder,e.g. n-primary-1,workspaces.diffmergeworkspace.diffmergeworkspace.e-g-n-primary-1
+explorer/src/workspaces/DiffMergeWorkspace/DiffMergeWorkspace.tsx,72,attr,high,placeholder,e.g. n-dup-2,workspaces.diffmergeworkspace.diffmergeworkspace.e-g-n-dup-2
+explorer/src/workspaces/EnrichWorkspace/EntityResolutionTab.tsx,360,string,high,,"linear-gradient(135deg, rgba(13,17,23,0.75), rgba(22,27,34,0.6))",workspaces.enrichworkspace.entityresolutiontab.linear-gradient-135deg-rgba-13-1
+explorer/src/workspaces/EnrichWorkspace/EntityResolutionTab.tsx,371,string,high,,"linear-gradient(135deg, rgba(242,182,109,0.22), rgba(242,182,109,0.1))",workspaces.enrichworkspace.entityresolutiontab.linear-gradient-135deg-rgba-242
+explorer/src/workspaces/EnrichWorkspace/EntityResolutionTab.tsx,383,string,high,,"linear-gradient(135deg, rgba(13,17,23,0.6), rgba(22,27,34,0.4))",workspaces.enrichworkspace.entityresolutiontab.linear-gradient-135deg-rgba-13-1
+explorer/src/workspaces/EnrichWorkspace/RegistryTab.tsx,235,string,high,,"linear-gradient(135deg, rgba(13,17,23,0.6), rgba(22,27,34,0.4))",workspaces.enrichworkspace.registrytab.linear-gradient-135deg-rgba-13-1
+explorer/src/workspaces/EnrichWorkspace/RegistryTab.tsx,237,string,high,,"inset 0 1px 0 rgba(255,255,255,0.03)",workspaces.enrichworkspace.registrytab.inset-0-1px-0-rgba-255-255-255-0
+explorer/src/workspaces/GraphWorkspace/GraphCanvas.tsx,2671,string,high,,"linear-gradient(135deg, rgba(27, 79, 170, 0.9), rgba(53, 123, 255, 0.84))",workspaces.graphworkspace.graphcanvas.linear-gradient-135deg-rgba-27-7
+explorer/src/workspaces/GraphWorkspace/GraphInspectorPanel.tsx,397,string,medium,,Entity,workspaces.graphworkspace.graphinspectorpanel.entity
+explorer/src/workspaces/GraphWorkspace/GraphInspectorPanel.tsx,606,string,high,,"inset 0 1px 0 rgba(255,255,255,0.035)",workspaces.graphworkspace.graphinspectorpanel.inset-0-1px-0-rgba-255-255-255-0
+explorer/src/workspaces/GraphWorkspace/GraphInspectorPanel.tsx,629,string,high,,"inset 0 1px 0 rgba(255,255,255,0.07), 0 10px 24px rgba(0,0,0,0.18)",workspaces.graphworkspace.graphinspectorpanel.inset-0-1px-0-rgba-255-255-255-0
+explorer/src/workspaces/GraphWorkspace/GraphLoadingOverlay.tsx,293,string,high,,"linear-gradient(180deg, rgba(1,4,9,0.22), rgba(1,4,9,0.5))",workspaces.graphworkspace.graphloadingoverlay.linear-gradient-180deg-rgba-1-4
+explorer/src/workspaces/GraphWorkspace/GraphLoadingOverlay.tsx,329,string,high,,"linear-gradient(180deg, rgba(1,4,9,0.04), rgba(1,4,9,0.18))",workspaces.graphworkspace.graphloadingoverlay.linear-gradient-180deg-rgba-1-4
+explorer/src/workspaces/GraphWorkspace/GraphLoadingOverlay.tsx,330,string,high,,"linear-gradient(180deg, rgba(1,4,9,0.22), rgba(1,4,9,0.5))",workspaces.graphworkspace.graphloadingoverlay.linear-gradient-180deg-rgba-1-4
+explorer/src/workspaces/GraphWorkspace/GraphWorkspace.tsx,1095,string,medium,,Entity,workspaces.graphworkspace.graphworkspace.entity
+explorer/src/workspaces/GraphWorkspace/GraphWorkspace.tsx,1369,jsx_text,high,,0 && graphSummary.nodeCount,workspaces.graphworkspace.graphworkspace.0-graphsummary-nodecount
+explorer/src/workspaces/GraphWorkspace/GraphWorkspace.tsx,3468,string,high,,"inset 0 1px 0 rgba(255,255,255,0.07), 0 10px 24px rgba(0,0,0,0.18)",workspaces.graphworkspace.graphworkspace.inset-0-1px-0-rgba-255-255-255-0
+explorer/src/workspaces/GraphWorkspace/GraphWorkspace.tsx,3493,string,high,,"linear-gradient(135deg, rgba(98, 226, 205, 0.1), rgba(233, 196, 122, 0.045))",workspaces.graphworkspace.graphworkspace.linear-gradient-135deg-rgba-98-2
+explorer/src/workspaces/GraphWorkspace/GraphWorkspace.tsx,3496,string,high,,"inset 0 1px 0 rgba(255,255,255,0.03)",workspaces.graphworkspace.graphworkspace.inset-0-1px-0-rgba-255-255-255-0
+explorer/src/workspaces/GraphWorkspace/GraphWorkspace.tsx,3512,string,high,,"linear-gradient(135deg, rgba(98, 226, 205, 0.09), rgba(227, 179, 65, 0.045))",workspaces.graphworkspace.graphworkspace.linear-gradient-135deg-rgba-98-2
+explorer/src/workspaces/GraphWorkspace/GraphWorkspace.tsx,3515,string,high,,"inset 0 1px 0 rgba(255,255,255,0.045)",workspaces.graphworkspace.graphworkspace.inset-0-1px-0-rgba-255-255-255-0
+explorer/src/workspaces/GraphWorkspace/MarkdownContentViewer.tsx,53,string,medium,,ArrowRight,workspaces.graphworkspace.markdowncontentviewer.arrowright
+explorer/src/workspaces/GraphWorkspace/MarkdownContentViewer.tsx,54,string,medium,,ArrowLeft,workspaces.graphworkspace.markdowncontentviewer.arrowleft
+explorer/src/workspaces/GraphWorkspace/MarkdownContentViewer.tsx,55,string,medium,,Home,workspaces.graphworkspace.markdowncontentviewer.home
+explorer/src/workspaces/GraphWorkspace/MarkdownContentViewer.tsx,56,string,medium,,End,workspaces.graphworkspace.markdowncontentviewer.end
+explorer/src/workspaces/GraphWorkspace/MarkdownContentViewer.tsx,448,string,high,rel,noopener noreferrer,workspaces.graphworkspace.markdowncontentviewer.noopener-noreferrer
+explorer/src/workspaces/GraphWorkspace/graphTheme.ts,454,string,high,,"linear-gradient(180deg, rgba(28, 31, 36, 0.88), rgba(16, 18, 23, 0.78))",workspaces.graphworkspace.graphtheme.linear-gradient-180deg-rgba-28-3
+explorer/src/workspaces/GraphWorkspace/graphTheme.ts,455,string,high,,"linear-gradient(180deg, rgba(23, 26, 31, 0.72), rgba(13, 15, 19, 0.64))",workspaces.graphworkspace.graphtheme.linear-gradient-180deg-rgba-23-2
+explorer/src/workspaces/GraphWorkspace/graphTheme.ts,456,string,high,,"linear-gradient(180deg, rgba(34, 37, 43, 0.94), rgba(18, 21, 26, 0.9))",workspaces.graphworkspace.graphtheme.linear-gradient-180deg-rgba-34-3
+explorer/src/workspaces/GraphWorkspace/graphTheme.ts,457,string,high,,"linear-gradient(180deg, rgba(21, 24, 30, 0.92), rgba(12, 14, 18, 0.9))",workspaces.graphworkspace.graphtheme.linear-gradient-180deg-rgba-21-2
+explorer/src/workspaces/GraphWorkspace/graphTheme.ts,463,string,high,,"linear-gradient(180deg, #0B0E12 0%, #07080B 100%)",workspaces.graphworkspace.graphtheme.linear-gradient-180deg-0b0e12-0
+explorer/src/workspaces/GraphWorkspace/graphTheme.ts,464,string,high,,"radial-gradient(circle at 50% 18%, rgba(88, 224, 204, 0.07), transparent 30%), radial-gradient(circle at 78% 0%, rgba(217, 168, 92, 0.055), transparent 26%)",workspaces.graphworkspace.graphtheme.radial-gradient-circle-at-50-18
+explorer/src/workspaces/GraphWorkspace/graphTheme.ts,467,string,high,,"radial-gradient(ellipse at center, transparent 42%, rgba(2, 3, 5, 0.82) 100%)",workspaces.graphworkspace.graphtheme.radial-gradient-ellipse-at-cente
+explorer/src/workspaces/GraphWorkspace/graphTheme.ts,474,string,high,,"linear-gradient(180deg, rgba(74, 181, 166, 0.24), rgba(38, 118, 116, 0.18))",workspaces.graphworkspace.graphtheme.linear-gradient-180deg-rgba-74-1
+explorer/src/workspaces/GraphWorkspace/graphTheme.ts,477,string,high,,"linear-gradient(180deg, rgba(55, 145, 132, 0.42), rgba(24, 86, 88, 0.28))",workspaces.graphworkspace.graphtheme.linear-gradient-180deg-rgba-55-1
+explorer/src/workspaces/GraphWorkspace/graphTheme.ts,487,string,high,,"linear-gradient(180deg, rgba(14, 18, 24, 0.86), rgba(8, 11, 15, 0.92))",workspaces.graphworkspace.graphtheme.linear-gradient-180deg-rgba-14-1
+explorer/src/workspaces/GraphWorkspace/graphTheme.ts,610,string,medium,,Entity,workspaces.graphworkspace.graphtheme.entity
+explorer/src/workspaces/GraphWorkspace/graphTheme.ts,620,string,medium,,Biomolecule,workspaces.graphworkspace.graphtheme.biomolecule
+explorer/src/workspaces/GraphWorkspace/graphTheme.ts,630,string,medium,,Condition,workspaces.graphworkspace.graphtheme.condition
+explorer/src/workspaces/GraphWorkspace/graphTheme.ts,640,string,medium,,Compound,workspaces.graphworkspace.graphtheme.compound
+explorer/src/workspaces/GraphWorkspace/graphTheme.ts,650,string,medium,,Process,workspaces.graphworkspace.graphtheme.process
+explorer/src/workspaces/GraphWorkspace/graphTheme.ts,660,string,medium,,Community,workspaces.graphworkspace.graphtheme.community
+explorer/src/workspaces/GraphWorkspace/nodeMarkdownSync.ts,63,string,high,,Graph node refresh failed ({{var}}).,workspaces.graphworkspace.nodemarkdownsync.graph-node-refresh-failed-var
+explorer/src/workspaces/GraphWorkspace/nodeMarkdownSync.ts,68,string,high,,Graph node refresh returned a different resource.,workspaces.graphworkspace.nodemarkdownsync.graph-node-refresh-returned-a-di
+explorer/src/workspaces/GraphWorkspace/plugins/neighborhoodPanelPlugin.tsx,73,string,medium,,Entity,workspaces.graphworkspace.plugins.neighborhoodpanelplugin.entity
+explorer/src/workspaces/GraphWorkspace/plugins/temporalOverlayPlugin.tsx,55,string,high,,"linear-gradient(135deg, rgba(6, 15, 27, 0.88), rgba(11, 22, 39, 0.76))",workspaces.graphworkspace.plugins.temporaloverlayplugin.linear-gradient-135deg-rgba-6-15
+explorer/src/workspaces/MemoryWorkspace.tsx,229,jsx_text,high,,AgentMemory,workspaces.memoryworkspace.agentmemory
+explorer/src/workspaces/OntologyWorkspace/AlignmentsTab.tsx,410,string,high,,"linear-gradient(135deg, rgba(11,25,42,0.94), rgba(7,14,25,0.9))",workspaces.ontologyworkspace.alignmentstab.linear-gradient-135deg-rgba-11-2
+explorer/src/workspaces/OntologyWorkspace/AlignmentsTab.tsx,417,string,high,,"inset 0 1px 0 rgba(255,255,255,0.04)",workspaces.ontologyworkspace.alignmentstab.inset-0-1px-0-rgba-255-255-255-0
+explorer/src/workspaces/OntologyWorkspace/AlignmentsTab.tsx,422,string,high,,"linear-gradient(135deg, rgba(20,151,136,0.55), rgba(74,163,255,0.35))",workspaces.ontologyworkspace.alignmentstab.linear-gradient-135deg-rgba-20-1
+explorer/src/workspaces/OntologyWorkspace/HealthTab.tsx,188,string,high,,"linear-gradient(135deg, rgba(11,25,42,0.94), rgba(7,14,25,0.9))",workspaces.ontologyworkspace.healthtab.linear-gradient-135deg-rgba-11-2
+explorer/src/workspaces/OntologyWorkspace/OntologyEditor.tsx,104,string,high,,"linear-gradient(135deg, rgba(74, 163, 255, 0.15), rgba(74, 163, 255, 0.05))",workspaces.ontologyworkspace.ontologyeditor.linear-gradient-135deg-rgba-74-1
+explorer/src/workspaces/OntologyWorkspace/OntologyLoader.tsx,723,string,high,,"linear-gradient(180deg, rgba(11,21,34,0.98), rgba(6,13,22,0.96))",workspaces.ontologyworkspace.ontologyloader.linear-gradient-180deg-rgba-11-2
+explorer/src/workspaces/OntologyWorkspace/OntologyLoader.tsx,828,string,high,,"linear-gradient(135deg, rgba(74,163,255,0.2), rgba(74,163,255,0.1))",workspaces.ontologyworkspace.ontologyloader.linear-gradient-135deg-rgba-74-1
+explorer/src/workspaces/OntologyWorkspace/OntologyManager.tsx,726,string,high,,"linear-gradient(135deg, rgba(74,163,255,0.2), rgba(74,163,255,0.08))",workspaces.ontologyworkspace.ontologymanager.linear-gradient-135deg-rgba-74-1
+explorer/src/workspaces/OntologyWorkspace/ShaclStudio.tsx,332,string,high,,: conforms ?,workspaces.ontologyworkspace.shaclstudio.conforms
+explorer/src/workspaces/ReasoningWorkspace.tsx,10,string,high,sample_rule,"IF inhibits(Metformin, mTOR) AND causes(mTOR, Neurodegeneration) THEN candidate(Metformin, Alzheimer's)",workspaces.reasoningworkspace.if-inhibits-metformin-mtor-and-c
+explorer/src/workspaces/ReasoningWorkspace.tsx,16,string,high,,"IF inhibits(Metformin, mTOR) AND causes(mTOR, Neurodegeneration) THEN candidate(Metformin, Alzheimer's)",workspaces.reasoningworkspace.if-inhibits-metformin-mtor-and-c
+explorer/src/workspaces/ReasoningWorkspace.tsx,21,string,high,,"IF mutated_in(X, Cancer) AND expressed_in(X, Y) THEN risk_gene(X, Y)",workspaces.reasoningworkspace.if-mutated-in-x-cancer-and-expre
+explorer/src/workspaces/ReasoningWorkspace.tsx,26,string,high,,"IF activates(X, EGFR) AND downstream_of(Y, EGFR) THEN activates(X, Y)",workspaces.reasoningworkspace.if-activates-x-egfr-and-downstre
+explorer/src/workspaces/SparqlWorkspace/SparqlWorkspace.tsx,151,string,high,,) : t(,workspaces.sparqlworkspace.sparqlworkspace.t
+explorer/src/workspaces/VocabularyWorkspace/VocabularyWorkspace.tsx,59,string,high,,"radial-gradient(ellipse at top right, rgba(210,168,255,0.04), transparent 60%)",workspaces.vocabularyworkspace.vocabularyworkspace.radial-gradient-ellipse-at-top-r

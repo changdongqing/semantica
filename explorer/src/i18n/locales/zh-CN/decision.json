@@ -1,0 +1,22 @@
+{
+  "noChainSteps": "无链步骤",
+  "noChainStepsBody": "未找到此决策的因果链步骤。",
+  "httpStatus": "HTTP {{status}}",
+  "partialDecisions": "警告:部分决策加载成功。",
+  "loadDecisionsFailed": "决策加载失败。",
+  "partialChain": "警告:部分链加载成功。",
+  "loadChainFailed": "因果链加载失败。",
+  "title": "决策",
+  "filterPlaceholder": "按 ID、类别、结果筛选…",
+  "noDecisions": "无决策",
+  "noMatches": "无匹配项",
+  "noDecisionsBody": "图中暂无可用决策。",
+  "adjustFilter": "请调整筛选条件。",
+  "record": "决策记录",
+  "causalChain": "因果链",
+  "stepCount_one": "{{count}} 个步骤",
+  "stepCount_other": "{{count}} 个步骤",
+  "unknownOutcome": "未知",
+  "noSelection": "未选择决策",
+  "noSelectionBody": "从列表中选择一个决策,以查看其因果链和元数据。"
+}

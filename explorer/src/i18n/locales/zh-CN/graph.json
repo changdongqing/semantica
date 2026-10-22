@@ -1,0 +1,474 @@
+{
+  "search": {
+    "placeholder": "搜索命令、节点或概念",
+    "ariaLabel": "搜索图节点",
+    "submitAria": "搜索当前查询",
+    "submit": "搜索",
+    "suggestionsAria": "搜索建议",
+    "failedWithStatus": "搜索失败,状态码 {{status}}",
+    "failed": "搜索失败",
+    "dismissAria": "关闭搜索结果",
+    "dismiss": "关闭",
+    "resultCount_one": "{{count}} 条结果",
+    "resultCount_other": "{{count}} 条结果"
+  },
+  "legend": {
+    "aria": "节点颜色",
+    "label": "节点颜色",
+    "title": "基础语义颜色;选择、缩放和距离效果可能改变节点外观。",
+    "itemTitle": "{{group}}:{{count}} 个节点"
+  },
+  "errors": {
+    "unknownLoading": "加载图时发生未知错误。",
+    "linkPredictionWithStatus": "链接预测失败,状态码 {{status}}",
+    "pathLookupWithStatus": "路径查找失败,状态码 {{status}}",
+    "provenanceWithStatus": "溯源报告失败,状态码 {{status}}",
+    "semanticUnavailable": "此图不支持语义相似度。",
+    "semanticNotFound": "语义距离 API 未找到所选节点。",
+    "semanticWithStatus": "语义距离失败,状态码 {{status}}",
+    "semanticNoNeighbors": "此节点未返回语义邻居。",
+    "semanticLoadFailed": "无法加载语义距离。"
+  },
+  "draft": {
+    "discardNode": "放弃未应用的 Markdown 草稿并离开此节点?"
+  },
+  "realtime": {
+    "addedNode": "已通过实时 ws 新增节点 {{label}}",
+    "addedNodeWithType": "已通过实时 ws 新增节点 {{label}}({{type}})",
+    "updatedNode": "已通过实时 ws 更新节点 {{id}}",
+    "addedEdge": "已通过实时 ws 新增边 {{type}}({{source}} → {{target}})"
+  },
+  "layout": {
+    "settling": "正在稳定运行时布局"
+  },
+  "summary": {
+    "groupedCompressed": "社区已压缩为分组结构视图",
+    "focusedNodes": "聚焦视图中有 {{count}} 个节点",
+    "groupedDrillIn": "支持直接下钻社区的分组结构视图",
+    "visibleCollapsed": "{{visible}} 个可见邻居,{{collapsed}} 个已折叠",
+    "neighborsHighlighted": "已高亮 {{count}} 个直接邻居",
+    "distanceFullGraph": "距离智能仅在完整图模式下可用。",
+    "distanceSelectNode": "选择一个节点以启用距离智能。",
+    "distanceSelectFullGraph": "选择一个完整图节点以加载语义距离。"
+  },
+  "panels": {
+    "effects": "效果",
+    "effectsTitle": "打开探索效果控制",
+    "neighbors": "邻居",
+    "neighborsTitle": "切换邻域面板",
+    "temporal": "时间",
+    "temporalTitle": "切换时间上下文面板"
+  },
+  "toolbar": {
+    "viewMode": "图视图模式",
+    "fullGraph": "完整图",
+    "fullGraphTitle": "返回完整图上下文",
+    "groupedView": "分组视图",
+    "groupedViewTitle": "将密集结构压缩为检测到的社区",
+    "focus": "聚焦",
+    "focusTitle": "在聚焦的局部图中检视所选节点",
+    "zoomIn": "放大",
+    "zoomInTitle": "放大(或在画布上向上滚动)",
+    "zoomInAria": "放大",
+    "zoomOut": "缩小",
+    "zoomOutTitle": "缩小(或在画布上向下滚动)",
+    "zoomOutAria": "缩小",
+    "fit": "适配",
+    "fitTitle": "重置相机以适配整张图",
+    "fitAria": "适配视图",
+    "run": "运行",
+    "pause": "暂停",
+    "layoutTitle": "切换布局任务",
+    "collapse": "折叠",
+    "collapseTitle": "隐藏所选节点周围优先级较低的扇出",
+    "expand": "展开",
+    "expandTitle": "恢复已折叠的局部邻域",
+    "reload": "重新加载",
+    "reloadTitle": "重新加载图数据",
+    "reloadAria": "重新加载图数据",
+    "ego": "自我中心模式",
+    "egoActive": "自我中心({{hops}}跳)",
+    "egoTitle": "在所选节点周围显示景深渐隐",
+    "egoActiveTitle": "自我中心视图:{{hops}} 跳深度(点击关闭)",
+    "heatmap": "热力图",
+    "heatmapTitle": "按到所选节点的跳数给节点着色",
+    "heatmapActiveTitle": "距离热力图已启用(点击关闭)",
+    "structural": "结构",
+    "structuralTitle": "按结构(跳)距离给边着色",
+    "semantic": "语义",
+    "semanticTitle": "按与所选节点的语义相似度给边着色",
+    "groupCamera": "相机",
+    "groupLayout": "布局",
+    "groupLocal": "局部",
+    "groupDistance": "距离",
+    "groupAnalysis": "分析",
+    "groupUtility": "工具"
+  },
+  "ego": {
+    "depth": "自我中心深度:",
+    "depthTitle": "自我中心深度:{{hops}} 跳",
+    "hops_one": "{{count}} 跳",
+    "hops_other": "{{count}} 跳"
+  },
+  "distance": {
+    "title": "距离智能",
+    "anchor": "锚点:",
+    "loading": "正在加载语义邻域...",
+    "neighbors_one": "{{count}} 个语义邻居",
+    "neighbors_other": "{{count}} 个语义邻居",
+    "nodesWithinHops": "{{hops}} 跳内有 {{count}} 个节点",
+    "bandAnchor": "锚点",
+    "bandOutside": "外部",
+    "bandHours": "{{count}} 跳",
+    "bandRange": "{{min}}-{{max}} 跳",
+    "status": {
+      "anchor": "{{count}} 个锚点",
+      "oneHop": "{{count}} 个 1 跳",
+      "twoHop": "{{count}} 个 2 跳",
+      "threeHop": "{{count}} 个 3+ 跳",
+      "outside": "{{count}} 个外部",
+      "sampled": "为提升可读性已采样",
+      "valueShown": "{{value}}(已显示 {{shown}})",
+      "anchorShown": "已显示 {{count}} 个锚点",
+      "oneHopShown": "已显示 {{count}} 个 1 跳",
+      "twoHopShown": "已显示 {{count}} 个 2 跳",
+      "threeHopShown": "已显示 {{count}} 个 3+ 跳"
+    }
+  },
+  "loading": {
+    "timeline": "正在加载时间轴…",
+    "inspector": "正在加载检查器…",
+    "plugin": "正在加载{{name}}…"
+  },
+  "edge": {
+    "relationship": "关系",
+    "close": "关闭",
+    "weight": "权重 {{value}}",
+    "bundledEdge_one": "{{count}} 条聚合边",
+    "bundledEdge_other": "{{count}} 条聚合边",
+    "parallelLane_one": "{{count}} 条并行通道",
+    "parallelLane_other": "{{count}} 条并行通道",
+    "familyMember_one": "{{count}} 个同族成员",
+    "familyMember_other": "{{count}} 个同族成员",
+    "bundle": "{{kind}} 聚合",
+    "provenanceFields_one": "{{count}} 个溯源字段",
+    "provenanceFields_other": "{{count}} 个溯源字段"
+  },
+  "status": {
+    "summaryNodes_one": "{{count}} 个节点",
+    "summaryNodes_other": "{{count}} 个节点",
+    "summaryEdges_one": "{{count}} 条边",
+    "summaryEdges_other": "{{count}} 条边",
+    "activeNodes_one": "{{count}} 个活跃节点",
+    "activeNodes_other": "{{count}} 个活跃节点"
+  },
+  "canvas": {
+    "layoutSettling": "布局仍在稳定中",
+    "disabledByToggle": "已被开关禁用",
+    "noActivePath": "无活动路径",
+    "disabledByZoomTier": "已被缩放层级禁用",
+    "requiresTier": "需要 {{tier}}",
+    "pathOffscreen": "路径在屏幕外",
+    "disabledBySizeCap": "已因路径大小上限禁用",
+    "visibleSegments_one": "{{count}} 个可见段",
+    "visibleSegments_other": "{{count}} 个可见段",
+    "noFocalNode": "无焦点节点",
+    "noTemporalFocus": "无时间焦点",
+    "waitingSemanticRegions": "等待语义区域摘要",
+    "waitingCentrality": "等待中心性排名",
+    "waitingTracedPath": "等待追踪路径",
+    "ready": "就绪",
+    "readyPathMatches": "就绪 · 局部路径与追踪路径一致",
+    "readyPathDiffers": "就绪 · 局部有向路径与追踪路径不同",
+    "waitingCommunitySummaries": "等待社区摘要",
+    "readyModularity": "就绪 · 模块度 {{value}}",
+    "panelEnabled": "面板已启用",
+    "disabledInProduction": "生产环境已禁用",
+    "fitView": "适配视图"
+  },
+  "inspector": {
+    "metrics": {
+      "confidenceDecay": "置信度衰减",
+      "semanticSimilarity": "语义相似度",
+      "pathCoherence": "路径连贯度",
+      "bottleneck": "瓶颈"
+    },
+    "noPath": "所选节点之间未找到路径。",
+    "bottleneckTitle": "瓶颈:{{id}}",
+    "focusTitle": "聚焦:{{id}}",
+    "totalWeight": "总权重:",
+    "hops_one": "{{count}} 跳",
+    "hops_other": "{{count}} 跳",
+    "altPaths_one": "{{count}} 条备选路径",
+    "altPaths_other": "{{count}} 条备选路径",
+    "searchPrompt": "搜索节点,或在画布中点击节点以查看其属性。",
+    "selection": "选择",
+    "notInspectable": "所选项目无法在当前图中直接检视。",
+    "useFocus": "使用「聚焦」将此分组选择解析为规范节点。",
+    "groupedSelection": "分组选择",
+    "groupedNotice": "此分组项目保持展示层级,直到您明确进入聚焦模式。",
+    "canonicalAvailable": "可用规范节点:{{id}}",
+    "content": "内容",
+    "actions": "操作",
+    "running": "运行中…",
+    "runLinkPrediction": "运行链接预测",
+    "provenanceJson": "溯源 JSON",
+    "provenanceMd": "溯源 MD",
+    "candidateTypePlaceholder": "可选的候选类型筛选,例如 disease",
+    "tracePath": "追踪路径",
+    "targetNodeId": "目标节点 ID",
+    "traceCausalPath": "追踪因果路径",
+    "chooseTarget": "选择目标或点击候选预测,以准备路径追踪。",
+    "candidateLinks": "候选链接",
+    "computing": "正在计算候选链接…",
+    "runPredictionHint": "运行链接预测以显示可能的下一跳关系。",
+    "sourceAttribution": "来源归属",
+    "noAttribution": "此节点未找到明确的归属元数据。",
+    "properties": "属性",
+    "noProperties": "此节点没有附加属性。",
+    "temporal": "时间",
+    "sourceFields_one": "{{count}} 个来源字段",
+    "sourceFields_other": "{{count}} 个来源字段",
+    "candidateLinksCount": "{{count}} 条候选链接",
+    "from": "起始:{{value}}",
+    "until": "结束:{{value}}"
+  },
+  "markdown": {
+    "contentViewMode": "内容视图模式",
+    "preview": "预览",
+    "source": "源码",
+    "copyTitle": "复制原始内容",
+    "copied": "已复制",
+    "copy": "复制",
+    "edit": "编辑",
+    "loading": "加载中…",
+    "cancel": "取消",
+    "apply": "应用",
+    "applying": "正在应用…",
+    "applyHint": "请先修改再应用",
+    "reloadLatest": "重新加载最新版本",
+    "noContent": "此节点暂无内容。",
+    "sourceAria": "Markdown 源码",
+    "errors": {
+      "serviceUnavailable": "无法连接 Markdown 服务。您的草稿已保留。"
+    },
+    "discardConfirm": "放弃此草稿并重新加载最新已应用版本?",
+    "image": "图片",
+    "unlabeled": "未标注",
+    "imageTitle": "图片"
+  },
+  "loadingOverlay": {
+    "preparing": "正在准备图会话",
+    "couldNotLoad": "无法加载图",
+    "couldNotLoadDetail": "Explorer API 未返回图数据。请检查后端是否正在运行且可访问,然后重试。",
+    "retry": "重试",
+    "stage": "阶段 {{current}}/{{total}}",
+    "stageProgress": "当前阶段 {{loaded}} / {{total}}",
+    "workingThroughStage": "正在处理此阶段",
+    "live": "实时",
+    "nodes": "节点",
+    "relationships": "关系",
+    "nodesProgress": "{{loaded}} / {{total}} 个节点",
+    "relationshipsProgress": "{{loaded}} / {{total}} 条关系",
+    "layoutSource": {
+      "persisted": "持久化布局",
+      "preserved": "保留的布局",
+      "runtime": "运行时布局"
+    },
+    "layoutState": {
+      "bootstrapping": "引导中",
+      "settling": "稳定中",
+      "interactive": "可交互",
+      "stable": "稳定",
+      "fallback": "回退"
+    }
+  },
+  "plugins": {
+    "effects": {
+      "label": "效果",
+      "title": "打开探索效果控制",
+      "panelTitle": "效果",
+      "eyebrow": "探索效果",
+      "sceneEffects": "场景效果",
+      "pathAndFocus": "路径与聚焦",
+      "graphIntelligence": "图智能",
+      "regionsAndSignals": "区域与信号",
+      "semanticLegend": "语义图例",
+      "diagnostics": "诊断",
+      "runtimeSnapshot": "运行时快照",
+      "devDiagnostics": "开发诊断",
+      "devDiagnosticsDescription": "检视插件、交互和效果门控状态。",
+      "on": "开",
+      "off": "关",
+      "waitingRuntime": "等待图运行时",
+      "segments": "{{visible}}/{{cap}} 段",
+      "emptyLegend": "图元数据可用时将填充图例数据。",
+      "emptyRegions": "图分析就绪时将填充区域与智能摘要。",
+      "rows": {
+        "pathPulse": {
+          "label": "路径脉冲",
+          "description": "活动所选路径上的动画脉冲。"
+        },
+        "pathFlow": {
+          "label": "路径流动",
+          "description": "沿活动所选路径的方向流动强调。"
+        },
+        "neighborhoodLens": {
+          "label": "邻域透镜",
+          "description": "对悬停或所选节点的局部强调。"
+        },
+        "temporalEmphasis": {
+          "label": "时间强调",
+          "description": "活动时间窗内时间相关节点的微弱光晕。"
+        },
+        "semanticRegions": {
+          "label": "语义区域",
+          "description": "最强可见主题簇周围的柔和语义轮廓。"
+        },
+        "contours": {
+          "label": "等值线",
+          "description": "最强可见锚点周围的低对比度密度光晕。"
+        },
+        "edgeLabels": {
+          "label": "边标签",
+          "description": "在图的边上绘制关系类型。关闭后,密集图恢复无标签边。"
+        },
+        "regionsSummary": {
+          "label": "区域摘要",
+          "description": "在效果面板中保持区域与信号摘要可见。"
+        },
+        "directedPathfinding": {
+          "label": "有向路径查找",
+          "description": "将追踪路径与严格的局部有向最短路径进行比较。"
+        },
+        "communityRegions": {
+          "label": "社区区域",
+          "description": "检测稳定的 Louvain 社区,用于定位和场景分组。"
+        },
+        "centralityRanking": {
+          "label": "中心性排名",
+          "description": "为标签、区域和导航排列最强的图锚点。"
+        },
+        "semanticLegendRow": {
+          "label": "语义图例",
+          "description": "用于图定位的紧凑语义分组图例。"
+        }
+      },
+      "regions": {
+        "semanticRegions": "语义区域",
+        "communityAnchors": "社区锚点",
+        "centralityLeaders": "中心性领先节点",
+        "directedPathfinding": "有向路径查找",
+        "fallbackLegend": "回退语义图例",
+        "visibleTotal": "{{visible}} 可见 / {{total}} 总计",
+        "communityMeta": "社区 {{id}} - {{visible}} 可见 / {{total}} 总计",
+        "score": "{{group}} - 得分 {{score}}",
+        "degree": "度 {{value}}",
+        "pathReady": "局部有向路径就绪",
+        "pathWaiting": "等待路径上下文",
+        "hopsMatch": "{{count}} 跳 - 匹配",
+        "hops": "{{count}} 跳",
+        "nodes": "{{count}} 个节点"
+      }
+    },
+    "neighborhood": {
+      "label": "邻居",
+      "title": "切换邻域面板",
+      "panelTitle": "邻域",
+      "empty": "选择一个节点以检视其局部邻域。",
+      "directNeighbors": "完整图中有 {{count}} 个直接邻居",
+      "collapse": "折叠邻域",
+      "expand": "展开邻域",
+      "collapsed": "当前视图中有 {{count}} 个低优先级邻居已折叠。",
+      "aggregated_one": "可见 {{count}} 个聚合结构包。",
+      "aggregated_other": "可见 {{count}} 个聚合结构包。",
+      "emptyNeighbors": "此节点没有直接邻居。",
+      "metaDegree": "度 {{count}}",
+      "metaWeight": "权重 {{value}}"
+    },
+    "temporal": {
+      "label": "时间",
+      "title": "切换时间上下文面板",
+      "panelTitle": "时间上下文",
+      "noTime": "未选择时间",
+      "currentScrubber": "当前时间滑块状态",
+      "current": "当前",
+      "bounds": "边界",
+      "activeNodes": "活跃节点",
+      "all": "全部",
+      "active": "{{count}} 个活跃",
+      "now": "现在"
+    },
+    "legend": {
+      "label": "图例",
+      "title": "切换语义图例",
+      "panelTitle": "图例",
+      "semanticGroups": "语义分组",
+      "empty": "图元数据可用时将填充图例。",
+      "nodes": "{{count}} 个节点"
+    }
+  },
+  "views": {
+    "grouped": {
+      "communitiesUndetected": "在检测到社区之前,分组视图不可用。",
+      "communityNodesMissing": "由于未能创建社区节点,分组视图不可用。",
+      "invalidCommunityLayout": "分组节点 {{nodeId}} 的坐标无效。",
+      "missingGroupedNode": "分组边 {{edgeId}} 引用了不存在的分组节点。"
+    },
+    "focused": {
+      "noSelection": "选择一个节点以在聚焦模式下检视。",
+      "groupedUnresolvable": "此分组选择无法使用聚焦模式。",
+      "notInGraph": "所选项目不在当前图中。"
+    }
+  },
+  "loadingTitle": {
+    "bootstrapping": "正在准备图会话",
+    "fetchingNodes": "正在加载节点",
+    "fetchingEdges": "正在加载关系",
+    "computingStyling": "正在计算节点样式",
+    "hydratingScene": "正在填充图场景",
+    "stabilizingLayout": "正在稳定布局",
+    "ready": "图已就绪"
+  },
+  "loadingStage": {
+    "prepare": "准备",
+    "nodes": "节点",
+    "relations": "关系",
+    "styling": "样式",
+    "scene": "场景",
+    "layout": "布局",
+    "stage": "阶段"
+  },
+  "loadingMessage": {
+    "preparing": "正在准备图会话",
+    "loadingNodesOf": "正在加载节点 {{loaded}} / {{total}}",
+    "loadingNodes": "正在加载节点 {{loaded}}",
+    "loadingEdgesOf": "正在加载边 {{loaded}} / {{total}}",
+    "loadingEdges": "正在加载边 {{loaded}}",
+    "fetchFailed": "获取失败:{{status}}{{detail}}",
+    "applyingStyling": "正在应用语义颜色、尺寸和结构样式",
+    "preparingRenderer": "正在准备渲染器并填充图场景",
+    "graphReady": "图已就绪",
+    "settlingLayout": "正在稳定运行时布局"
+  },
+  "analytics": {
+    "noVisibleNodes": "没有可见节点可用于概览骨干选择。",
+    "ready": "就绪",
+    "noBackboneEdges": "没有概览骨干边满足当前可见性阈值。",
+    "tracePath": "追踪一条路径,以与局部严格有向最短路径查找进行比较。",
+    "noPathEndpoints": "当前图视图中没有活动路径端点。",
+    "noStrictPath": "当前图视图中未找到严格有向最短路径。",
+    "pathfindingFailed": "当前图快照的有向路径查找失败。",
+    "noVisibleCommunities": "当前图上下文中没有可见社区。",
+    "noCommunitySummaries": "社区检测尚未生成摘要。",
+    "readyDegreeBiased": "就绪(大图中介数受限时偏向度数)。",
+    "centralityWaiting": "中心性排名正在等待图数据。",
+    "noSemanticRegions": "当前图上下文中没有可见语义区域。",
+    "communityAnchor": "社区锚点"
+  },
+  "timeline": {
+    "playEvolution": "播放演化",
+    "pauseEvolution": "暂停演化",
+    "label": "时间滑块 · {{min}}-{{max}}"
+  }
+}

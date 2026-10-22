@@ -1,0 +1,88 @@
+{
+  "hero": {
+    "title": "Navigate knowledge<br/>like a <em>living system.</em>",
+    "subtitle": "Semantica turns dense knowledge graphs into a navigable command center — discovery, reasoning, provenance, distance intelligence, and decision context, all in one interface.",
+    "primaryCta": "Open Semantica Explorer",
+    "secondaryCta": "Run Reasoning"
+  },
+  "kicker": "Knowledge Explorer",
+  "status": {
+    "checking": "Connecting…",
+    "online": "System Online",
+    "offline": "Backend Unreachable",
+    "version": "Semantica v2 · Semantic Intelligence"
+  },
+  "aria": {
+    "productCategory": "Product category",
+    "preview": "Knowledge graph preview",
+    "systemStatus": "System status",
+    "workspaces": "Workspaces",
+    "capabilities": "Intelligence capabilities"
+  },
+  "preview": {
+    "tab": "Semantica Explorer",
+    "search": "Search command, node, or concept",
+    "meta": "distance heatmap · focused view · causal path",
+    "dossier": {
+      "title": "Entity Dossier",
+      "distanceBand": "Distance band",
+      "near": "Near",
+      "pathCoherence": "Path coherence",
+      "provenance": "Provenance",
+      "audited": "Audited"
+    },
+    "timeline": {
+      "title": "Temporal Evidence",
+      "coverage": "66% coverage"
+    }
+  },
+  "metrics": {
+    "knowledgeNodes": "Knowledge nodes",
+    "relationshipsMapped": "Relationships mapped",
+    "graphModes": "Graph modes",
+    "datasetOnline": "Dataset online",
+    "readyToExplore": "Ready to explore",
+    "live": "Live",
+    "ready": "Ready",
+    "active": "Active",
+    "standby": "Standby"
+  },
+  "sections": {
+    "workspaces": "Workspaces",
+    "primaryWorkspace": "Primary Workspace"
+  },
+  "primary": {
+    "title": "Semantica Explorer",
+    "description": "Full graph, grouped communities, focused neighborhoods, and distance intelligence — all in one canvas."
+  },
+  "actions": {
+    "vocabulary": {
+      "label": "Vocabulary",
+      "description": "Schemes and terms"
+    },
+    "analyze": {
+      "label": "Analyze",
+      "description": "Inference and queries"
+    },
+    "decisions": {
+      "label": "Decisions",
+      "description": "Chains and precedents"
+    },
+    "enrich": {
+      "label": "Enrich",
+      "description": "Import and resolve"
+    },
+    "manage": {
+      "label": "Manage",
+      "description": "Lineage and ontology"
+    }
+  },
+  "capabilities": {
+    "title": "Intelligence Layer",
+    "distanceHeatmap": "Distance Heatmap",
+    "focusedNeighborhood": "Focused Neighborhood",
+    "groupedCommunities": "Grouped Communities",
+    "traceCausalPath": "Trace Causal Path",
+    "provenanceDossier": "Provenance Dossier"
+  }
+}

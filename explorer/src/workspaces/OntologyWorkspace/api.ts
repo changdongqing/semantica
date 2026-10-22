@@ -1,3 +1,4 @@
+import i18n from "../../i18n";
 import type {
   AlignmentRelation,
   AlignmentSuggestion,
@@ -44,7 +45,7 @@ export type OntologyEntityOwner = {
 
 async function parseResponse<T>(response: Response): Promise<T> {
   if (!response.ok) {
-    let detail = `Request failed with status ${response.status}`;
+    let detail = i18n.t("api.requestFailed", { ns: "ontology", status: response.status });
     try {
       const body = await response.json();
       detail = body.detail || detail;
@@ -55,7 +56,7 @@ async function parseResponse<T>(response: Response): Promise<T> {
   }
   const data = await response.json();
   if (response.status === 207) {
-    console.warn("Partial Success:", data.message || "Warning: 207 Multi-Status");
+    console.warn("Partial Success:", data.message || i18n.t("api.partialSuccess", { ns: "ontology" }));
   }
   return data as T;
 }

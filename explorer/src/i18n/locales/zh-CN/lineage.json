@@ -1,0 +1,13 @@
+{
+  "httpError": "HTTP {{status}}:API 路由缺失或失败。{{detail}}",
+  "nonJson": "后端返回了非 JSON 响应(可能是 HTML 回退页)。",
+  "partialLineage": "警告:部分血缘加载成功。",
+  "loadFailed": "血缘加载失败。",
+  "kicker": "PROV-O 血缘",
+  "enterNodeId": "输入节点 ID…",
+  "trace": "追踪",
+  "exportJson": "导出 JSON",
+  "exportMd": "导出 MD",
+  "viewerTitle": "PROV-O 血缘查看器",
+  "viewerBody": "在上方工具栏输入节点 ID 并点击「追踪」,以查看其 W3C PROV-O 血缘图。"
+}

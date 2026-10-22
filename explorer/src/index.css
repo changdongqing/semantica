@@ -12,7 +12,8 @@ html, body, #root {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  font-family: 'IBM Plex Sans', 'Space Grotesk', sans-serif;
+  font-family: 'IBM Plex Sans', 'Space Grotesk', 'Noto Sans SC', 'PingFang SC',
+    'Microsoft YaHei', 'Source Han Sans SC', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #0d1117;
@@ -46,7 +47,30 @@ html, body, #root {
 
 /* Monospace font for code elements */
 code, pre, .mono {
-  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Noto Sans Mono CJK SC',
+    'Cascadia Code', monospace;
+}
+
+/* ── Chinese (zh-CN) typography ─────────────────────────────────────────
+   CJK glyphs have different metrics from the Latin stack: slightly looser
+   line height and no negative tracking keep dense UI copy readable. */
+html[lang='zh-CN'] body {
+  line-height: 1.65;
+  letter-spacing: 0;
+}
+
+html[lang='zh-CN'] .ws-title,
+html[lang='zh-CN'] .ws-eyebrow,
+html[lang='zh-CN'] .landing-title,
+html[lang='zh-CN'] .workspace-title {
+  letter-spacing: 0;
+}
+
+html[lang='zh-CN'] .ws-btn,
+html[lang='zh-CN'] .ws-pill,
+html[lang='zh-CN'] .workspace-tab,
+html[lang='zh-CN'] .nav-label {
+  letter-spacing: 0;
 }
 
 /* Selection highlight */

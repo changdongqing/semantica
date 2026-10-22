@@ -13,10 +13,13 @@ function maxWeightBetween(graphRef: any, sourceId: string, targetId: string): nu
   return weight;
 }
 
-function formatNeighborMeta(neighbor: { nodeType: string; degree: number; weight: number }) {
-  const parts = [neighbor.nodeType, `degree ${neighbor.degree}`];
+function formatNeighborMeta(
+  neighbor: { nodeType: string; degree: number; weight: number },
+  t: (key: string, options?: Record<string, unknown>) => string,
+) {
+  const parts = [neighbor.nodeType, t("plugins.neighborhood.metaDegree", { count: neighbor.degree })];
   if (neighbor.weight > 0) {
-    parts.push(`weight ${neighbor.weight.toFixed(2)}`);
+    parts.push(t("plugins.neighborhood.metaWeight", { value: neighbor.weight.toFixed(2) }));
   }
   return parts.join(" · ");
 }
@@ -29,8 +32,8 @@ export const neighborhoodPanelPlugin: GraphPlugin = {
   toolbarItems: (context) => [
     {
       id: "neighborhood-toggle",
-      label: "Neighbors",
-      title: "Toggle neighborhood panel",
+      label: context.t("plugins.neighborhood.label"),
+      title: context.t("plugins.neighborhood.title"),
       active: context.isPanelOpen(NEIGHBORHOOD_PANEL_ID),
       order: 30,
       onClick: () => context.dispatchAction({ type: "togglePanel", panelId: NEIGHBORHOOD_PANEL_ID }),
@@ -46,13 +49,13 @@ export const neighborhoodPanelPlugin: GraphPlugin = {
     if (!selected) {
       return {
         id: NEIGHBORHOOD_PANEL_ID,
-        title: "Neighborhood",
+        title: context.t("plugins.neighborhood.panelTitle"),
         placement: "bottom",
         order: 20,
         defaultOpen: false,
         preferredWidth: 360,
         preferredHeight: 260,
-        content: <div style={emptyTextStyle}>Select a node to inspect its local neighborhood.</div>,
+        content: <div style={emptyTextStyle}>{context.t("plugins.neighborhood.empty")}</div>,
       };
     }
 
@@ -91,7 +94,7 @@ export const neighborhoodPanelPlugin: GraphPlugin = {
 
     return {
       id: NEIGHBORHOOD_PANEL_ID,
-      title: "Neighborhood",
+      title: context.t("plugins.neighborhood.panelTitle"),
       placement: "bottom",
       order: 20,
       defaultOpen: false,
@@ -101,7 +104,7 @@ export const neighborhoodPanelPlugin: GraphPlugin = {
         <div style={panelBodyStyle}>
           <div style={panelEyebrowStyle}>{selected.label}</div>
           <div style={summaryStyle}>
-            {selected.neighborCount.toLocaleString()} direct neighbors in the full graph
+            {context.t("plugins.neighborhood.directNeighbors", { count: selected.neighborCount.toLocaleString() })}
           </div>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             <button
@@ -110,7 +113,7 @@ export const neighborhoodPanelPlugin: GraphPlugin = {
               disabled={!selected.canCollapseNeighborhood || selected.isNeighborhoodCollapsed}
               style={controlButtonStyle}
             >
-              Collapse Neighborhood
+              {context.t("plugins.neighborhood.collapse")}
             </button>
             <button
               type="button"
@@ -118,17 +121,17 @@ export const neighborhoodPanelPlugin: GraphPlugin = {
               disabled={!selected.isNeighborhoodCollapsed}
               style={controlButtonStyle}
             >
-              Expand Neighborhood
+              {context.t("plugins.neighborhood.expand")}
             </button>
           </div>
           {hiddenNeighborCount > 0 ? (
             <div style={summaryStyle}>
-              {hiddenNeighborCount.toLocaleString()} lower-priority neighbors are collapsed in the current view.
+              {context.t("plugins.neighborhood.collapsed", { count: hiddenNeighborCount.toLocaleString() })}
             </div>
           ) : null}
           {aggregatedEdgeCount > 0 ? (
             <div style={summaryStyle}>
-              {aggregatedEdgeCount.toLocaleString()} aggregated structural bundle{aggregatedEdgeCount === 1 ? "" : "s"} visible.
+              {context.t("plugins.neighborhood.aggregated", { count: aggregatedEdgeCount.toLocaleString() })}
             </div>
           ) : null}
           {neighbors.length ? (
@@ -149,13 +152,13 @@ export const neighborhoodPanelPlugin: GraphPlugin = {
                   />
                   <div style={{ minWidth: 0, flex: 1, textAlign: "left" }}>
                     <div style={rowTitleStyle}>{neighbor.label}</div>
-                    <div style={rowMetaStyle}>{formatNeighborMeta(neighbor)}</div>
+                    <div style={rowMetaStyle}>{formatNeighborMeta(neighbor, context.t)}</div>
                   </div>
                 </button>
               ))}
             </div>
           ) : (
-            <div style={emptyTextStyle}>No direct neighbors are available for this node.</div>
+            <div style={emptyTextStyle}>{context.t("plugins.neighborhood.emptyNeighbors")}</div>
           )}
         </div>
       ),

@@ -237,7 +237,7 @@ function buildCommunitySummaries(
         dominantSemanticGroup,
         color: data.color,
         anchorNodeId: data.anchorNodeId,
-        anchorLabel: data.anchorNodeId ? getNodeLabel(graphRef, data.anchorNodeId) : "Community anchor",
+        anchorLabel: data.anchorNodeId ? getNodeLabel(graphRef, data.anchorNodeId) : "",
         prominence: data.prominence,
       };
     })
@@ -439,7 +439,7 @@ function buildOverviewBackboneSnapshot(
   if (visibleNodeIds.size === 0) {
     return {
       ready: false,
-      reason: "No visible nodes are available for overview backbone selection.",
+      reason: "analytics.noVisibleNodes",
       edgeIds: [],
     };
   }
@@ -569,8 +569,8 @@ function buildOverviewBackboneSnapshot(
   return {
     ready: edgeIds.length > 0,
     reason: edgeIds.length > 0
-      ? "Ready"
-      : "No overview backbone edges met the current visibility thresholds.",
+      ? "analytics.ready"
+      : "analytics.noBackboneEdges",
     edgeIds,
   };
 }
@@ -582,7 +582,7 @@ function buildDirectedPathSnapshot(
   if (interactionState.activePath.length < 2) {
     return {
       ready: false,
-      reason: "Trace a path to compare it against local strict directed shortest pathfinding.",
+      reason: "analytics.tracePath",
       sourceId: interactionState.selectedNodeId || null,
       targetId: null,
       path: [],
@@ -596,7 +596,7 @@ function buildDirectedPathSnapshot(
   if (!sourceId || !targetId || !graphRef.hasNode(sourceId) || !graphRef.hasNode(targetId)) {
     return {
       ready: false,
-      reason: "Active path endpoints are not available in the current graph view.",
+      reason: "analytics.noPathEndpoints",
       sourceId,
       targetId,
       path: [],
@@ -610,8 +610,8 @@ function buildDirectedPathSnapshot(
     return {
       ready: path.length > 1,
       reason: path.length > 1
-        ? "Ready"
-        : "No strict directed shortest path found in the current graph view.",
+        ? "analytics.ready"
+        : "analytics.noStrictPath",
       sourceId,
       targetId,
       path,
@@ -622,7 +622,7 @@ function buildDirectedPathSnapshot(
     console.error("[GraphAnalytics] directed pathfinding failed", error);
     return {
       ready: false,
-      reason: "Directed pathfinding failed for the current graph snapshot.",
+      reason: "analytics.pathfindingFailed",
       sourceId,
       targetId,
       path: [],
@@ -660,10 +660,10 @@ export function buildGraphAnalyticsSnapshot(params: {
     communities: {
       ready: communitySummaries.length > 0,
       reason: communitySummaries.length > 0
-        ? "Ready"
+        ? "analytics.ready"
         : base.communitiesByNode.size > 0
-          ? "No visible communities in the current graph context."
-          : "Community detection has not produced summaries yet.",
+          ? "analytics.noVisibleCommunities"
+          : "analytics.noCommunitySummaries",
       count: base.communityCount,
       modularity: base.modularity,
       summaries: communitySummaries,
@@ -672,16 +672,16 @@ export function buildGraphAnalyticsSnapshot(params: {
       ready: centralitySummaries.length > 0,
       reason: centralitySummaries.length > 0
         ? base.betweennessReady
-          ? "Ready"
-          : "Ready (degree-biased while betweenness is bounded for large graphs)."
-        : "Centrality ranking is waiting for graph data.",
+          ? "analytics.ready"
+          : "analytics.readyDegreeBiased"
+        : "analytics.centralityWaiting",
       topNodes: centralitySummaries,
     },
     semanticRegions: {
       ready: semanticRegionSummaries.length > 0,
       reason: semanticRegionSummaries.length > 0
-        ? "Ready"
-        : "No semantic regions are visible in the current graph context.",
+        ? "analytics.ready"
+        : "analytics.noSemanticRegions",
       summaries: semanticRegionSummaries,
     },
     overviewBackbone,

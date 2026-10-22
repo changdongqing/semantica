@@ -6,38 +6,38 @@ import {
   groupedViewReasonText,
 } from "../src/workspaces/GraphWorkspace/graphViewCopy.ts";
 
-test("groupedViewReasonText owns grouped-view copy for every reason code", () => {
-  assert.equal(
+test("groupedViewReasonText maps every reason code to a graph-namespace key", () => {
+  assert.deepEqual(
     groupedViewReasonText({ code: "communities-undetected" }),
-    "Grouped view is unavailable until communities can be detected.",
+    { key: "views.grouped.communitiesUndetected" },
   );
-  assert.equal(
+  assert.deepEqual(
     groupedViewReasonText({ code: "community-nodes-missing" }),
-    "Grouped view is unavailable because no community nodes could be created.",
+    { key: "views.grouped.communityNodesMissing" },
   );
-  assert.equal(
+  assert.deepEqual(
     groupedViewReasonText({ code: "invalid-community-layout", nodeId: "community-a" }),
-    "Grouped node community-a has invalid coordinates.",
+    { key: "views.grouped.invalidCommunityLayout", values: { nodeId: "community-a" } },
   );
-  assert.equal(
+  assert.deepEqual(
     groupedViewReasonText({ code: "missing-grouped-node", edgeId: "edge-1" }),
-    "Grouped edge edge-1 references a missing grouped node.",
+    { key: "views.grouped.missingGroupedNode", values: { edgeId: "edge-1" } },
   );
   assert.equal(groupedViewReasonText(null), null);
 });
 
-test("focusedUnavailableReasonText owns focused-mode copy for every reason code", () => {
-  assert.equal(
+test("focusedUnavailableReasonText maps every reason code to a graph-namespace key", () => {
+  assert.deepEqual(
     focusedUnavailableReasonText({ code: "no-selection" }),
-    "Select a node to inspect in Focused mode.",
+    { key: "views.focused.noSelection" },
   );
-  assert.equal(
+  assert.deepEqual(
     focusedUnavailableReasonText({ code: "grouped-unresolvable" }),
-    "Focused mode is unavailable for this grouped selection.",
+    { key: "views.focused.groupedUnresolvable" },
   );
-  assert.equal(
+  assert.deepEqual(
     focusedUnavailableReasonText({ code: "not-in-graph" }),
-    "Selected item is not available in the current graph.",
+    { key: "views.focused.notInGraph" },
   );
   assert.equal(focusedUnavailableReasonText(null), null);
 });

@@ -1,0 +1,23 @@
+{
+  "templates": {
+    "allTriples": "所有三元组",
+    "nodeTypes": "节点类型",
+    "outgoingEdges": "出边",
+    "pathBetween": "路径查询"
+  },
+  "templatesLabel": "模板:",
+  "copyQuery": "复制查询",
+  "copied": "已复制!",
+  "copy": "复制",
+  "running": "运行中…",
+  "runQuery": "运行查询",
+  "results": "结果",
+  "rows_one": "{{count}} 行",
+  "rows_other": "{{count}} 行",
+  "exportCsv": "导出 CSV",
+  "noResults": "无结果",
+  "noResultsBody": "查询返回 0 行。请尝试更宽泛的查询或检查数据。",
+  "runAQuery": "运行查询",
+  "runAQueryBody": "在上方编写 SPARQL 或选择模板,然后点击「运行查询」查看结果。",
+  "nullValue": "null"
+}

@@ -1,0 +1,20 @@
+{
+  "discardDraft": "Discard the unapplied Markdown draft and open another memory?",
+  "loadFailed": "The memory could not be loaded.",
+  "memoriesLoadFailed": "Memories could not be loaded.",
+  "moreLoadFailed": "More memories could not be loaded.",
+  "summaryRefreshFailed": "Memory was applied, but its summary could not be refreshed.",
+  "loadedCount": "{{loaded}} of {{total}} loaded",
+  "refreshAria": "Refresh memories",
+  "refreshBlockedHint": "Apply or cancel the current draft before refreshing",
+  "refreshHint": "Refresh memories",
+  "emptyMemory": "Empty memory",
+  "loadMoreAria": "Load more memories",
+  "loading": "Loading…",
+  "loadMore": "Load more",
+  "noItems": "No AgentMemory items are available.",
+  "refresh": "Refresh",
+  "loadingMemories": "Loading memories…",
+  "selected": "Selected memory",
+  "agentMemories": "Agent memories"
+}

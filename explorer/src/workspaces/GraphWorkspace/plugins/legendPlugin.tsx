@@ -14,8 +14,8 @@ export const legendPlugin: GraphPlugin = {
   toolbarItems: (context) => [
     {
       id: "legend-toggle",
-      label: "Legend",
-      title: "Toggle semantic legend",
+      label: context.t("plugins.legend.label"),
+      title: context.t("plugins.legend.title"),
       active: context.isPanelOpen(LEGEND_PANEL_ID),
       order: 20,
       onClick: () => context.dispatchAction({ type: "togglePanel", panelId: LEGEND_PANEL_ID }),
@@ -32,7 +32,7 @@ export const legendPlugin: GraphPlugin = {
 
     return {
       id: LEGEND_PANEL_ID,
-      title: "Legend",
+      title: context.t("plugins.legend.panelTitle"),
       placement: "bottom",
       order: 10,
       defaultOpen: false,
@@ -40,7 +40,7 @@ export const legendPlugin: GraphPlugin = {
       preferredHeight: 220,
       content: (
         <div style={panelBodyStyle}>
-          <div style={panelEyebrowStyle}>Semantic groups</div>
+          <div style={panelEyebrowStyle}>{context.t("plugins.legend.semanticGroups")}</div>
           {items.length ? (
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               {items.map((item) => (
@@ -54,13 +54,13 @@ export const legendPlugin: GraphPlugin = {
                   />
                   <div style={{ minWidth: 0, flex: 1 }}>
                     <div style={rowTitleStyle}>{item.group}</div>
-                    <div style={rowMetaStyle}>{item.count.toLocaleString()} nodes</div>
+                    <div style={rowMetaStyle}>{context.t("plugins.legend.nodes", { count: item.count.toLocaleString() })}</div>
                   </div>
                 </div>
               ))}
             </div>
           ) : (
-            <div style={emptyTextStyle}>Legend will populate when the graph metadata is available.</div>
+            <div style={emptyTextStyle}>{context.t("plugins.legend.empty")}</div>
           )}
         </div>
       ),

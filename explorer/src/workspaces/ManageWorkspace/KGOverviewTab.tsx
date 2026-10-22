@@ -5,6 +5,7 @@
  * type distributions, and top connected nodes.
  */
 import { useState, useEffect, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import { Network, RefreshCw, Loader2 } from "lucide-react";
 
 interface KGStats {
@@ -66,6 +67,7 @@ function buildTypeMap(nodes: NodeItem[], key: keyof NodeItem): Record<string, nu
 }
 
 export function KGOverviewTab() {
+  const { t } = useTranslation("manage");
   const [stats, setStats] = useState<KGStats | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -81,20 +83,20 @@ export function KGOverviewTab() {
         fetch("/api/graph/nodes?limit=500"),
       ]);
 
-      if (!statsRes.ok) throw new Error(`Stats fetch failed (${statsRes.status})`);
-      if (!nodesRes.ok) throw new Error(`Nodes fetch failed (${nodesRes.status})`);
+      if (!statsRes.ok) throw new Error(t("statsFailed", { status: statsRes.status }));
+      if (!nodesRes.ok) throw new Error(t("nodesFailed", { status: nodesRes.status }));
 
       const statsData: KGStats = await statsRes.json();
       setStats(statsData);
       if (statsRes.status === 207) {
-        setError((statsData as any).message || "Warning: Partial success loading stats.");
+        setError((statsData as any).message || t("partialStats"));
       }
 
       const nodesData: NodeListResponse = await nodesRes.json();
       const nodes = nodesData.nodes ?? [];
       setNodeTypeMap(buildTypeMap(nodes, "type"));
       if (nodesRes.status === 207) {
-        const nodesMessage = (nodesData as any).message || "Warning: Partial success loading nodes.";
+        const nodesMessage = (nodesData as any).message || t("partialNodes");
         setError((prev) => (prev ? `${prev} ${nodesMessage}` : nodesMessage));
       }
 
@@ -115,11 +117,11 @@ export function KGOverviewTab() {
         setTopNodes(sorted);
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to load graph overview. Ensure the server is running.");
+      setError(err instanceof Error ? err.message : t("loadFailed"));
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [t]);
 
   useEffect(() => {
     let ignore = false;
@@ -134,14 +136,14 @@ export function KGOverviewTab() {
           fetch("/api/graph/nodes?limit=500"),
         ]);
 
-        if (!statsRes.ok) throw new Error(`Stats fetch failed (${statsRes.status})`);
-        if (!nodesRes.ok) throw new Error(`Nodes fetch failed (${nodesRes.status})`);
+        if (!statsRes.ok) throw new Error(t("statsFailed", { status: statsRes.status }));
+        if (!nodesRes.ok) throw new Error(t("nodesFailed", { status: nodesRes.status }));
 
         const statsData: KGStats = await statsRes.json();
         if (!ignore) {
           setStats(statsData);
           if (statsRes.status === 207) {
-            setError((statsData as { message?: string }).message || "Warning: Partial success loading stats.");
+            setError((statsData as { message?: string }).message || t("partialStats"));
           }
         }
 
@@ -150,7 +152,7 @@ export function KGOverviewTab() {
         if (!ignore) {
           setNodeTypeMap(buildTypeMap(nodes, "type"));
           if (nodesRes.status === 207) {
-            const nodesMessage = (nodesData as { message?: string }).message || "Warning: Partial success loading nodes.";
+            const nodesMessage = (nodesData as { message?: string }).message || t("partialNodes");
             setError((prev) => (prev ? `${prev} ${nodesMessage}` : nodesMessage));
           }
         }
@@ -172,14 +174,14 @@ export function KGOverviewTab() {
           if (!ignore) setTopNodes(sorted);
         }
       } catch (err) {
-        if (!ignore) setError(err instanceof Error ? err.message : "Failed to load graph overview. Ensure the server is running.");
+        if (!ignore) setError(err instanceof Error ? err.message : t("loadFailed"));
       } finally {
         if (!ignore) setLoading(false);
       }
     }
     void fetchInitial();
     return () => { ignore = true; };
-  }, []);
+  }, [t]);
 
   const nodeTypeEntries = Object.entries(nodeTypeMap).sort((a, b) => b[1] - a[1]);
   const edgeTypeEntries = stats?.edge_types
@@ -190,9 +192,9 @@ export function KGOverviewTab() {
   const totalEdges = stats?.edge_count ?? 0;
 
   const statCards = [
-    { label: "Nodes",   value: totalNodes.toLocaleString(), color: "var(--ws-accent)",  sub: `${nodeTypeEntries.length} types` },
-    { label: "Edges",   value: totalEdges.toLocaleString(), color: "var(--ws-green)",   sub: `${edgeTypeEntries.length} rel. types` },
-    { label: "Density", value: totalNodes > 1 ? ((totalEdges / (totalNodes * (totalNodes - 1))) * 100).toFixed(3) + "%" : "—", color: "var(--ws-purple)", sub: "graph density" },
+    { label: t("nodes"),   value: totalNodes.toLocaleString(), color: "var(--ws-accent)",  sub: t("typeCount", { count: nodeTypeEntries.length }) },
+    { label: t("edges"),   value: totalEdges.toLocaleString(), color: "var(--ws-green)",   sub: t("relTypeCount", { count: edgeTypeEntries.length }) },
+    { label: t("density"), value: totalNodes > 1 ? ((totalEdges / (totalNodes * (totalNodes - 1))) * 100).toFixed(3) + "%" : "—", color: "var(--ws-purple)", sub: t("graphDensity") },
   ];
 
   return (
@@ -210,13 +212,13 @@ export function KGOverviewTab() {
             <Network size={16} />
           </div>
           <div>
-            <div style={{ color: "var(--ws-text)", fontSize: 15, fontWeight: 700, lineHeight: 1 }}>KG Overview</div>
-            <div className="ws-body" style={{ fontSize: 11, marginTop: 2 }}>Node/edge counts, type distributions, and top connected nodes</div>
+            <div style={{ color: "var(--ws-text)", fontSize: 15, fontWeight: 700, lineHeight: 1 }}>{t("title")}</div>
+            <div className="ws-body" style={{ fontSize: 11, marginTop: 2 }}>{t("subtitle")}</div>
           </div>
         </div>
         <button className="ws-btn ws-btn--ghost" onClick={() => void fetchOverview()} disabled={loading} style={{ padding: "6px 12px" }}>
           {loading ? <Loader2 size={13} className="ws-spin" /> : <RefreshCw size={13} />}
-          Refresh
+          {t("refresh")}
         </button>
       </div>
 
@@ -237,13 +239,13 @@ export function KGOverviewTab() {
         {/* Type breakdowns */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
           <div className="ws-card" style={{ padding: "16px 18px", gap: 8, display: "flex", flexDirection: "column" }}>
-            <div className="ws-eyebrow" style={{ marginBottom: 4 }}>Node Type Breakdown</div>
+            <div className="ws-eyebrow" style={{ marginBottom: 4 }}>{t("nodeBreakdown")}</div>
             {loading ? (
               <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                 {[80, 65, 45, 35, 25].map((w, i) => <div key={i} className="ws-skeleton" style={{ height: 10, width: `${w}%` }} />)}
               </div>
             ) : nodeTypeEntries.length === 0 ? (
-              <div className="ws-body" style={{ fontSize: 12 }}>No data — load the graph first.</div>
+              <div className="ws-body" style={{ fontSize: 12 }}>{t("noData")}</div>
             ) : (
               nodeTypeEntries.slice(0, 8).map(([type, count], i) => (
                 <TypeBar key={type} label={type} count={count} total={totalNodes || 1} color={NODE_COLORS[i % NODE_COLORS.length]} />
@@ -252,13 +254,13 @@ export function KGOverviewTab() {
           </div>
 
           <div className="ws-card" style={{ padding: "16px 18px", gap: 8, display: "flex", flexDirection: "column" }}>
-            <div className="ws-eyebrow" style={{ marginBottom: 4 }}>Edge Type Breakdown</div>
+            <div className="ws-eyebrow" style={{ marginBottom: 4 }}>{t("edgeBreakdown")}</div>
             {loading ? (
               <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                 {[70, 55, 48, 30, 20].map((w, i) => <div key={i} className="ws-skeleton" style={{ height: 10, width: `${w}%` }} />)}
               </div>
             ) : edgeTypeEntries.length === 0 ? (
-              <div className="ws-body" style={{ fontSize: 12 }}>Edge type breakdown requires the stats endpoint to return edge_types.</div>
+              <div className="ws-body" style={{ fontSize: 12 }}>{t("edgeBreakdownHint")}</div>
             ) : (
               edgeTypeEntries.slice(0, 8).map(([type, count], i) => (
                 <TypeBar key={type} label={type} count={count} total={totalEdges || 1} color={EDGE_COLORS[i % EDGE_COLORS.length]} />
@@ -270,7 +272,7 @@ export function KGOverviewTab() {
         {/* Top connected nodes */}
         {topNodes.length > 0 && (
           <div className="ws-card" style={{ padding: "16px 18px" }}>
-            <div className="ws-eyebrow" style={{ marginBottom: 12 }}>Top Connected Nodes (by degree)</div>
+            <div className="ws-eyebrow" style={{ marginBottom: 12 }}>{t("topConnected")}</div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 8 }}>
               {topNodes.map(({ node, neighborCount }, rank) => (
                 <div key={node.id} style={{ display: "flex", alignItems: "center", gap: 10, padding: "9px 12px", borderRadius: "var(--ws-radius-sm)", background: "rgba(0,0,0,0.18)", border: "1px solid var(--ws-border)" }}>

@@ -1,41 +1,47 @@
 import type { FocusedUnavailableReason, GroupedViewUnavailableReason } from "./types";
 
-const GROUPED_VIEW_COPY = {
-  "communities-undetected": "Grouped view is unavailable until communities can be detected.",
-  "community-nodes-missing": "Grouped view is unavailable because no community nodes could be created.",
-} as const;
-
-const FOCUSED_MODE_COPY = {
-  "no-selection": "Select a node to inspect in Focused mode.",
-  "grouped-unresolvable": "Focused mode is unavailable for this grouped selection.",
-  "not-in-graph": "Selected item is not available in the current graph.",
-} as const;
+/**
+ * A translatable message: the caller resolves `key` against the `graph`
+ * namespace and passes `values` as interpolation options. Keeping this module
+ * free of i18next keeps the reason mapping pure and testable.
+ */
+export type CopyMessage = {
+  key: string;
+  values?: Record<string, string>;
+};
 
 export function groupedViewReasonText(
   reason: GroupedViewUnavailableReason | null | undefined,
-): string | null {
+): CopyMessage | null {
   if (!reason) {
     return null;
   }
 
   switch (reason.code) {
     case "communities-undetected":
-      return GROUPED_VIEW_COPY["communities-undetected"];
+      return { key: "views.grouped.communitiesUndetected" };
     case "community-nodes-missing":
-      return GROUPED_VIEW_COPY["community-nodes-missing"];
+      return { key: "views.grouped.communityNodesMissing" };
     case "invalid-community-layout":
-      return `Grouped node ${reason.nodeId} has invalid coordinates.`;
+      return { key: "views.grouped.invalidCommunityLayout", values: { nodeId: reason.nodeId } };
     case "missing-grouped-node":
-      return `Grouped edge ${reason.edgeId} references a missing grouped node.`;
+      return { key: "views.grouped.missingGroupedNode", values: { edgeId: reason.edgeId } };
   }
 }
 
 export function focusedUnavailableReasonText(
   reason: FocusedUnavailableReason | null | undefined,
-): string | null {
+): CopyMessage | null {
   if (!reason) {
     return null;
   }
 
-  return FOCUSED_MODE_COPY[reason.code];
+  switch (reason.code) {
+    case "no-selection":
+      return { key: "views.focused.noSelection" };
+    case "grouped-unresolvable":
+      return { key: "views.focused.groupedUnresolvable" };
+    case "not-in-graph":
+      return { key: "views.focused.notInGraph" };
+  }
 }

@@ -1,0 +1,20 @@
+{
+  "discardDraft": "放弃未应用的 Markdown 草稿并打开另一条记忆?",
+  "loadFailed": "无法加载该记忆。",
+  "memoriesLoadFailed": "无法加载记忆。",
+  "moreLoadFailed": "无法加载更多记忆。",
+  "summaryRefreshFailed": "记忆已应用,但其摘要无法刷新。",
+  "loadedCount": "已加载 {{loaded}} / {{total}}",
+  "refreshAria": "刷新记忆",
+  "refreshBlockedHint": "刷新前请先应用或取消当前草稿",
+  "refreshHint": "刷新记忆",
+  "emptyMemory": "空记忆",
+  "loadMoreAria": "加载更多记忆",
+  "loading": "加载中…",
+  "loadMore": "加载更多",
+  "noItems": "暂无 AgentMemory 条目。",
+  "refresh": "刷新",
+  "loadingMemories": "正在加载记忆…",
+  "selected": "已选记忆",
+  "agentMemories": "Agent 记忆"
+}

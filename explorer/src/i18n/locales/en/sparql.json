@@ -1,0 +1,23 @@
+{
+  "templates": {
+    "allTriples": "All triples",
+    "nodeTypes": "Node types",
+    "outgoingEdges": "Outgoing edges",
+    "pathBetween": "Path between"
+  },
+  "templatesLabel": "Templates:",
+  "copyQuery": "Copy query",
+  "copied": "Copied!",
+  "copy": "Copy",
+  "running": "Running…",
+  "runQuery": "Run Query",
+  "results": "Results",
+  "rows_one": "{{count}} row",
+  "rows_other": "{{count}} rows",
+  "exportCsv": "Export CSV",
+  "noResults": "No results",
+  "noResultsBody": "The query returned 0 rows. Try a broader query or check your data.",
+  "runAQuery": "Run a query",
+  "runAQueryBody": "Write SPARQL above or pick a template, then click Run Query to see results here.",
+  "nullValue": "null"
+}

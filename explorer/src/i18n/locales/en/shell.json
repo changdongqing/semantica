@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "explore": {
+      "label": "Knowledge Explorer",
+      "hint": "Graph and vocabulary browsing"
+    },
+    "analyze": {
+      "label": "Analyze",
+      "hint": "Query and inspect the dataset"
+    },
+    "decisions": {
+      "label": "Decisions",
+      "hint": "Decision chains and precedent review"
+    },
+    "enrich": {
+      "label": "Enrich",
+      "hint": "Import, export, and merge workflows"
+    },
+    "manage": {
+      "label": "Manage",
+      "hint": "Lineage and governance tooling"
+    },
+    "ontologyHub": {
+      "label": "Ontology Hub",
+      "hint": "Schema governance, registry, and vocabulary management"
+    }
+  },
+  "kicker": "Workspace",
+  "loading": "Loading workspace…",
+  "brandTitle": "Semantica Knowledge Explorer",
+  "discardDraft": "Discard the unapplied Markdown draft and leave this resource?",
+  "workspace": {
+    "explore": {
+      "title": "Explore",
+      "subtitle": {
+        "graph": "Browse the graph and switch views without leaving the workspace.",
+        "memories": "Browse and edit canonical AgentMemory documents."
+      },
+      "kicker": {
+        "graph": "Graph Studio",
+        "memories": "Memory Browser",
+        "vocabulary": "Vocabulary Browser"
+      }
+    },
+    "analyze": {
+      "title": "Analyze",
+      "subtitle": "Query the active graph and test inference rules.",
+      "kicker": {
+        "reasoning": "Reasoning Engine",
+        "sparql": "SPARQL Query"
+      },
+      "tab": {
+        "reasoning": "Reasoning Playground",
+        "sparql": "SPARQL Querying"
+      }
+    },
+    "decisions": {
+      "title": "Decisions",
+      "subtitle": "Inspect decision chains, causal context, and precedent matches.",
+      "kicker": "Decision Intelligence"
+    },
+    "enrich": {
+      "title": "Enrich",
+      "subtitle": "Import, export, reconcile, and audit graph entities.",
+      "kicker": "Knowledge Audit",
+      "tab": {
+        "import": "Import and Export",
+        "merge": "Diff and Merge",
+        "resolve": "Entity Resolution",
+        "registry": "Registry"
+      }
+    },
+    "ontology": {
+      "title": "Ontology Hub",
+      "subtitle": "Load, browse, edit, and govern ontologies and vocabularies.",
+      "kicker": "Schema Governance"
+    },
+    "manage": {
+      "title": "Manage",
+      "subtitle": "Review provenance, lineage, ontology, and governance context.",
+      "kicker": "Graph Governance",
+      "tab": {
+        "lineage": "PROV-O Lineage",
+        "kgOverview": "KG Overview",
+        "ontology": "Ontology Summary"
+      }
+    }
+  },
+  "exploreTabs": {
+    "graph": "Semantica Explorer",
+    "memories": "Memories",
+    "vocabulary": "Vocabulary Browser"
+  }
+}

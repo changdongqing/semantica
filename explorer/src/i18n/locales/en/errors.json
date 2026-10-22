@@ -1,0 +1,9 @@
+{
+  "boundary": {
+    "title": "Something went wrong in this view.",
+    "critical": "This view continues to encounter a critical error. Please switch to another workspace or reload the page to restore functionality.",
+    "description": "An unexpected problem occurred while rendering this workspace. Your data is safe, but this view cannot be displayed.",
+    "tryAgain": "Try Again",
+    "reload": "Reload Application"
+  }
+}

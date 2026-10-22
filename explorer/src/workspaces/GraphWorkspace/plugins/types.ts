@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import type { TFunction } from "i18next";
 import type Graph from "graphology";
 
 import { graph, type EdgeAttributes, type NodeAttributes } from "../../../store/graphStore";
@@ -69,6 +70,11 @@ export interface GraphPluginOverlayDescriptor {
 }
 
 export interface GraphPluginContext {
+  /**
+   * Translator bound to the `graph` namespace, refreshed whenever the active
+   * locale changes so plugin labels and panel copy stay in sync.
+   */
+  readonly t: TFunction;
   readonly scene: GraphSceneRuntime | null;
   readonly graph: typeof graph | Graph<NodeAttributes, EdgeAttributes>;
   readonly displayGraph: typeof graph | Graph<NodeAttributes, EdgeAttributes>;

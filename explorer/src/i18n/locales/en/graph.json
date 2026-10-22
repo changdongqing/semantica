@@ -1,0 +1,474 @@
+{
+  "search": {
+    "placeholder": "Search command, node, or concept",
+    "ariaLabel": "Search graph nodes",
+    "submitAria": "Search for the current query",
+    "submit": "Search",
+    "suggestionsAria": "Search suggestions",
+    "failedWithStatus": "Search failed with status {{status}}",
+    "failed": "Search failed",
+    "dismissAria": "Dismiss search results",
+    "dismiss": "Dismiss",
+    "resultCount_one": "{{count}} result",
+    "resultCount_other": "{{count}} results"
+  },
+  "legend": {
+    "aria": "Node colors",
+    "label": "Node colors",
+    "title": "Base semantic colors; selection, zoom, and distance effects can change node appearance.",
+    "itemTitle": "{{group}}: {{count}} nodes"
+  },
+  "errors": {
+    "unknownLoading": "Unknown error while loading the graph.",
+    "linkPredictionWithStatus": "Link prediction failed with status {{status}}",
+    "pathLookupWithStatus": "Path lookup failed with status {{status}}",
+    "provenanceWithStatus": "Provenance report failed with status {{status}}",
+    "semanticUnavailable": "Semantic similarity is unavailable for this graph.",
+    "semanticNotFound": "Selected node was not found by the semantic distance API.",
+    "semanticWithStatus": "Semantic distance failed with status {{status}}",
+    "semanticNoNeighbors": "No semantic neighbors were returned for this node.",
+    "semanticLoadFailed": "Semantic distance could not be loaded."
+  },
+  "draft": {
+    "discardNode": "Discard the unapplied Markdown draft and leave this node?"
+  },
+  "realtime": {
+    "addedNode": "Added node {{label}} via realtime ws",
+    "addedNodeWithType": "Added node {{label}} ({{type}}) via realtime ws",
+    "updatedNode": "Updated node {{id}} via realtime ws",
+    "addedEdge": "Added edge {{type}} ({{source}} → {{target}}) via realtime ws"
+  },
+  "layout": {
+    "settling": "Settling runtime layout"
+  },
+  "summary": {
+    "groupedCompressed": "Communities compressed into grouped structure view",
+    "focusedNodes": "{{count}} nodes in focused view",
+    "groupedDrillIn": "Grouped structure view with direct community drill-in",
+    "visibleCollapsed": "{{visible}} visible neighbors, {{collapsed}} collapsed",
+    "neighborsHighlighted": "{{count}} direct neighbors highlighted",
+    "distanceFullGraph": "Distance intelligence is available in Full Graph mode.",
+    "distanceSelectNode": "Select a node to activate distance intelligence.",
+    "distanceSelectFullGraph": "Select a Full Graph node to load semantic distance."
+  },
+  "panels": {
+    "effects": "Effects",
+    "effectsTitle": "Open exploration effects controls",
+    "neighbors": "Neighbors",
+    "neighborsTitle": "Toggle neighborhood panel",
+    "temporal": "Temporal",
+    "temporalTitle": "Toggle temporal context panel"
+  },
+  "toolbar": {
+    "viewMode": "Graph view mode",
+    "fullGraph": "Full Graph",
+    "fullGraphTitle": "Return to the full graph context",
+    "groupedView": "Grouped View",
+    "groupedViewTitle": "Compress dense structure into detected communities",
+    "focus": "Focus",
+    "focusTitle": "Inspect the selected node in a focused local graph",
+    "zoomIn": "Zoom In",
+    "zoomInTitle": "Zoom in (or scroll up on the canvas)",
+    "zoomInAria": "Zoom in",
+    "zoomOut": "Zoom Out",
+    "zoomOutTitle": "Zoom out (or scroll down on the canvas)",
+    "zoomOutAria": "Zoom out",
+    "fit": "Fit",
+    "fitTitle": "Reset the camera to fit the whole graph",
+    "fitAria": "Fit view",
+    "run": "Run",
+    "pause": "Pause",
+    "layoutTitle": "Toggle the layout worker",
+    "collapse": "Collapse",
+    "collapseTitle": "Hide lower-priority fanout around the selected node",
+    "expand": "Expand",
+    "expandTitle": "Restore the collapsed local neighborhood",
+    "reload": "Reload",
+    "reloadTitle": "Reload the graph data",
+    "reloadAria": "Reload graph data",
+    "ego": "Ego Mode",
+    "egoActive": "Ego ({{hops}}h)",
+    "egoTitle": "Show depth-of-field fading around the selected node",
+    "egoActiveTitle": "Egocentric view: {{hops}} hops depth (click to toggle off)",
+    "heatmap": "Heatmap",
+    "heatmapTitle": "Color nodes by hop distance from selected node",
+    "heatmapActiveTitle": "Distance heatmap active (click to toggle off)",
+    "structural": "Structural",
+    "structuralTitle": "Color edges by structural (hop) distance",
+    "semantic": "Semantic",
+    "semanticTitle": "Color edges by semantic similarity to selected node",
+    "groupCamera": "Camera",
+    "groupLayout": "Layout",
+    "groupLocal": "Local",
+    "groupDistance": "Distance",
+    "groupAnalysis": "Analysis",
+    "groupUtility": "Utility"
+  },
+  "ego": {
+    "depth": "Ego depth:",
+    "depthTitle": "Ego depth: {{hops}} hops",
+    "hops_one": "{{count}} hop",
+    "hops_other": "{{count}} hops"
+  },
+  "distance": {
+    "title": "Distance Intelligence",
+    "anchor": "Anchor:",
+    "loading": "Loading semantic neighborhood...",
+    "neighbors_one": "{{count}} semantic neighbor",
+    "neighbors_other": "{{count}} semantic neighbors",
+    "nodesWithinHops": "{{count}} nodes within {{hops}} hops",
+    "bandAnchor": "Anchor",
+    "bandOutside": "Outside",
+    "bandHours": "{{count}}h",
+    "bandRange": "{{min}}-{{max}}h",
+    "status": {
+      "anchor": "{{count}} anchor",
+      "oneHop": "{{count}} 1-hop",
+      "twoHop": "{{count}} 2-hop",
+      "threeHop": "{{count}} 3+ hop",
+      "outside": "{{count}} outside",
+      "sampled": "Sampled for readability",
+      "valueShown": "{{value}} ({{shown}} shown)",
+      "anchorShown": "{{count}} anchor shown",
+      "oneHopShown": "{{count}} 1-hop shown",
+      "twoHopShown": "{{count}} 2-hop shown",
+      "threeHopShown": "{{count}} 3+ hop shown"
+    }
+  },
+  "loading": {
+    "timeline": "Loading timeline…",
+    "inspector": "Loading inspector…",
+    "plugin": "Loading {{name}}…"
+  },
+  "edge": {
+    "relationship": "Relationship",
+    "close": "Close",
+    "weight": "weight {{value}}",
+    "bundledEdge_one": "{{count}} bundled edge",
+    "bundledEdge_other": "{{count}} bundled edges",
+    "parallelLane_one": "{{count}} parallel lane",
+    "parallelLane_other": "{{count}} parallel lanes",
+    "familyMember_one": "{{count}} family member",
+    "familyMember_other": "{{count}} family members",
+    "bundle": "{{kind}} bundle",
+    "provenanceFields_one": "{{count}} provenance field",
+    "provenanceFields_other": "{{count}} provenance fields"
+  },
+  "status": {
+    "summaryNodes_one": "{{count}} node",
+    "summaryNodes_other": "{{count}} nodes",
+    "summaryEdges_one": "{{count}} edge",
+    "summaryEdges_other": "{{count}} edges",
+    "activeNodes_one": "{{count}} active node",
+    "activeNodes_other": "{{count}} active nodes"
+  },
+  "canvas": {
+    "layoutSettling": "Layout is still settling",
+    "disabledByToggle": "Disabled by toggle",
+    "noActivePath": "No active path",
+    "disabledByZoomTier": "Disabled by zoom tier",
+    "requiresTier": "Requires {{tier}}",
+    "pathOffscreen": "Path is off-screen",
+    "disabledBySizeCap": "Disabled by path size cap",
+    "visibleSegments_one": "{{count}} visible segment",
+    "visibleSegments_other": "{{count}} visible segments",
+    "noFocalNode": "No focal node",
+    "noTemporalFocus": "No temporal focus time",
+    "waitingSemanticRegions": "Waiting for semantic region summaries",
+    "waitingCentrality": "Waiting for centrality ranking",
+    "waitingTracedPath": "Waiting for a traced path",
+    "ready": "Ready",
+    "readyPathMatches": "Ready · local path matches traced path",
+    "readyPathDiffers": "Ready · local directed path differs from traced path",
+    "waitingCommunitySummaries": "Waiting for community summaries",
+    "readyModularity": "Ready · modularity {{value}}",
+    "panelEnabled": "Panel enabled",
+    "disabledInProduction": "Disabled in production",
+    "fitView": "Fit View"
+  },
+  "inspector": {
+    "metrics": {
+      "confidenceDecay": "Confidence Decay",
+      "semanticSimilarity": "Semantic Sim.",
+      "pathCoherence": "Path Coherence",
+      "bottleneck": "Bottleneck"
+    },
+    "noPath": "No path found between the selected nodes.",
+    "bottleneckTitle": "Bottleneck: {{id}}",
+    "focusTitle": "Focus: {{id}}",
+    "totalWeight": "Total weight:",
+    "hops_one": "{{count}} hop",
+    "hops_other": "{{count}} hops",
+    "altPaths_one": "{{count}} alt path",
+    "altPaths_other": "{{count}} alt paths",
+    "searchPrompt": "Search for a node or click one in the canvas to inspect its properties.",
+    "selection": "Selection",
+    "notInspectable": "Selected item is not directly inspectable in the current graph.",
+    "useFocus": "Use Focus to resolve this grouped selection to its canonical node.",
+    "groupedSelection": "Grouped Selection",
+    "groupedNotice": "This grouped item stays display-level until you explicitly enter Focused mode.",
+    "canonicalAvailable": "Canonical node available: {{id}}",
+    "content": "Content",
+    "actions": "Actions",
+    "running": "Running…",
+    "runLinkPrediction": "Run Link Prediction",
+    "provenanceJson": "Provenance JSON",
+    "provenanceMd": "Provenance MD",
+    "candidateTypePlaceholder": "Optional candidate type filter, e.g. disease",
+    "tracePath": "Trace Path",
+    "targetNodeId": "Target node ID",
+    "traceCausalPath": "Trace Causal Path",
+    "chooseTarget": "Choose a target or click a candidate prediction to prepare a path trace.",
+    "candidateLinks": "Candidate Links",
+    "computing": "Computing candidate links…",
+    "runPredictionHint": "Run link prediction to surface likely next-hop relationships.",
+    "sourceAttribution": "Source Attribution",
+    "noAttribution": "No explicit attribution metadata was found on this node.",
+    "properties": "Properties",
+    "noProperties": "No additional properties are attached to this node.",
+    "temporal": "temporal",
+    "sourceFields_one": "{{count}} source field",
+    "sourceFields_other": "{{count}} source fields",
+    "candidateLinksCount": "{{count}} candidate links",
+    "from": "from: {{value}}",
+    "until": "until: {{value}}"
+  },
+  "markdown": {
+    "contentViewMode": "Content view mode",
+    "preview": "Preview",
+    "source": "Source",
+    "copyTitle": "Copy raw content",
+    "copied": "Copied",
+    "copy": "Copy",
+    "edit": "Edit",
+    "loading": "Loading…",
+    "cancel": "Cancel",
+    "apply": "Apply",
+    "applying": "Applying…",
+    "applyHint": "Make a change before applying",
+    "reloadLatest": "Reload latest",
+    "noContent": "No content available for this node.",
+    "sourceAria": "Markdown source",
+    "errors": {
+      "serviceUnavailable": "The Markdown service could not be reached. Your draft was kept."
+    },
+    "discardConfirm": "Discard this draft and reload the latest applied version?",
+    "image": "Image",
+    "unlabeled": "unlabeled",
+    "imageTitle": "Image"
+  },
+  "loadingOverlay": {
+    "preparing": "Preparing graph session",
+    "couldNotLoad": "Could not load the graph",
+    "couldNotLoadDetail": "The Explorer API did not return graph data. Check that the backend is running and reachable, then try again.",
+    "retry": "Retry",
+    "stage": "Stage {{current}}/{{total}}",
+    "stageProgress": "{{loaded}} / {{total}} in current stage",
+    "workingThroughStage": "Working through this stage",
+    "live": "Live",
+    "nodes": "nodes",
+    "relationships": "relationships",
+    "nodesProgress": "{{loaded}} / {{total}} nodes",
+    "relationshipsProgress": "{{loaded}} / {{total}} relationships",
+    "layoutSource": {
+      "persisted": "Persisted layout",
+      "preserved": "Preserved layout",
+      "runtime": "Runtime layout"
+    },
+    "layoutState": {
+      "bootstrapping": "Bootstrapping",
+      "settling": "Settling",
+      "interactive": "Interactive",
+      "stable": "Stable",
+      "fallback": "Fallback"
+    }
+  },
+  "plugins": {
+    "effects": {
+      "label": "Effects",
+      "title": "Open exploration effects controls",
+      "panelTitle": "Effects",
+      "eyebrow": "Exploration effects",
+      "sceneEffects": "Scene effects",
+      "pathAndFocus": "Path and focus",
+      "graphIntelligence": "Graph intelligence",
+      "regionsAndSignals": "Regions and signals",
+      "semanticLegend": "Semantic legend",
+      "diagnostics": "Diagnostics",
+      "runtimeSnapshot": "Runtime snapshot",
+      "devDiagnostics": "Dev Diagnostics",
+      "devDiagnosticsDescription": "Inspect plugin, interaction, and effect gating state.",
+      "on": "On",
+      "off": "Off",
+      "waitingRuntime": "Waiting for graph runtime",
+      "segments": "{{visible}}/{{cap}} segments",
+      "emptyLegend": "Legend data will populate when graph metadata is available.",
+      "emptyRegions": "Regions and intelligence summaries will populate when graph analytics are ready.",
+      "rows": {
+        "pathPulse": {
+          "label": "Path Pulse",
+          "description": "Animated pulse on the active selected path."
+        },
+        "pathFlow": {
+          "label": "Path Flow",
+          "description": "Directional flow accents along the active selected path."
+        },
+        "neighborhoodLens": {
+          "label": "Neighborhood Lens",
+          "description": "Local emphasis around the hovered or selected node."
+        },
+        "temporalEmphasis": {
+          "label": "Temporal Emphasis",
+          "description": "Subtle glow around temporally relevant nodes in the active time window."
+        },
+        "semanticRegions": {
+          "label": "Semantic Regions",
+          "description": "Quiet semantic hulls around the strongest visible topic clusters."
+        },
+        "contours": {
+          "label": "Contours",
+          "description": "Low-contrast density halos around the strongest visible anchors."
+        },
+        "edgeLabels": {
+          "label": "Edge Labels",
+          "description": "Draw the relationship type on graph edges. Off restores label-free edges on dense graphs."
+        },
+        "regionsSummary": {
+          "label": "Regions Summary",
+          "description": "Keep the regions and signals summary visible in the Effects panel."
+        },
+        "directedPathfinding": {
+          "label": "Directed Pathfinding",
+          "description": "Compare the traced path against a strict local directed shortest path."
+        },
+        "communityRegions": {
+          "label": "Community Regions",
+          "description": "Detect stable Louvain communities for orientation and scene grouping."
+        },
+        "centralityRanking": {
+          "label": "Centrality Ranking",
+          "description": "Rank the strongest graph anchors for labels, regions, and navigation."
+        },
+        "semanticLegendRow": {
+          "label": "Semantic Legend",
+          "description": "Compact semantic group legend for graph orientation."
+        }
+      },
+      "regions": {
+        "semanticRegions": "Semantic regions",
+        "communityAnchors": "Community anchors",
+        "centralityLeaders": "Centrality leaders",
+        "directedPathfinding": "Directed pathfinding",
+        "fallbackLegend": "Fallback semantic legend",
+        "visibleTotal": "{{visible}} visible / {{total}} total",
+        "communityMeta": "Community {{id}} - {{visible}} visible / {{total}} total",
+        "score": "{{group}} - score {{score}}",
+        "degree": "deg {{value}}",
+        "pathReady": "Local directed path ready",
+        "pathWaiting": "Waiting for path context",
+        "hopsMatch": "{{count}} hops - match",
+        "hops": "{{count}} hops",
+        "nodes": "{{count}} nodes"
+      }
+    },
+    "neighborhood": {
+      "label": "Neighbors",
+      "title": "Toggle neighborhood panel",
+      "panelTitle": "Neighborhood",
+      "empty": "Select a node to inspect its local neighborhood.",
+      "directNeighbors": "{{count}} direct neighbors in the full graph",
+      "collapse": "Collapse Neighborhood",
+      "expand": "Expand Neighborhood",
+      "collapsed": "{{count}} lower-priority neighbors are collapsed in the current view.",
+      "aggregated_one": "{{count}} aggregated structural bundle visible.",
+      "aggregated_other": "{{count}} aggregated structural bundles visible.",
+      "emptyNeighbors": "No direct neighbors are available for this node.",
+      "metaDegree": "degree {{count}}",
+      "metaWeight": "weight {{value}}"
+    },
+    "temporal": {
+      "label": "Temporal",
+      "title": "Toggle temporal context panel",
+      "panelTitle": "Temporal Context",
+      "noTime": "No time selected",
+      "currentScrubber": "Current scrubber state",
+      "current": "Current",
+      "bounds": "Bounds",
+      "activeNodes": "Active nodes",
+      "all": "All",
+      "active": "{{count}} active",
+      "now": "now"
+    },
+    "legend": {
+      "label": "Legend",
+      "title": "Toggle semantic legend",
+      "panelTitle": "Legend",
+      "semanticGroups": "Semantic groups",
+      "empty": "Legend will populate when the graph metadata is available.",
+      "nodes": "{{count}} nodes"
+    }
+  },
+  "views": {
+    "grouped": {
+      "communitiesUndetected": "Grouped view is unavailable until communities can be detected.",
+      "communityNodesMissing": "Grouped view is unavailable because no community nodes could be created.",
+      "invalidCommunityLayout": "Grouped node {{nodeId}} has invalid coordinates.",
+      "missingGroupedNode": "Grouped edge {{edgeId}} references a missing grouped node."
+    },
+    "focused": {
+      "noSelection": "Select a node to inspect in Focused mode.",
+      "groupedUnresolvable": "Focused mode is unavailable for this grouped selection.",
+      "notInGraph": "Selected item is not available in the current graph."
+    }
+  },
+  "loadingTitle": {
+    "bootstrapping": "Preparing graph session",
+    "fetchingNodes": "Loading nodes",
+    "fetchingEdges": "Loading relationships",
+    "computingStyling": "Computing node styling",
+    "hydratingScene": "Hydrating graph scene",
+    "stabilizingLayout": "Stabilizing layout",
+    "ready": "Graph ready"
+  },
+  "loadingStage": {
+    "prepare": "Prepare",
+    "nodes": "Nodes",
+    "relations": "Relations",
+    "styling": "Styling",
+    "scene": "Scene",
+    "layout": "Layout",
+    "stage": "Stage"
+  },
+  "loadingMessage": {
+    "preparing": "Preparing graph session",
+    "loadingNodesOf": "Loading nodes {{loaded}} of {{total}}",
+    "loadingNodes": "Loading nodes {{loaded}}",
+    "loadingEdgesOf": "Loading edges {{loaded}} of {{total}}",
+    "loadingEdges": "Loading edges {{loaded}}",
+    "fetchFailed": "Fetch failed: {{status}}{{detail}}",
+    "applyingStyling": "Applying semantic color, sizing, and structural styling",
+    "preparingRenderer": "Preparing renderer and hydrating graph scene",
+    "graphReady": "Graph ready",
+    "settlingLayout": "Settling runtime layout"
+  },
+  "analytics": {
+    "noVisibleNodes": "No visible nodes are available for overview backbone selection.",
+    "ready": "Ready",
+    "noBackboneEdges": "No overview backbone edges met the current visibility thresholds.",
+    "tracePath": "Trace a path to compare it against local strict directed shortest pathfinding.",
+    "noPathEndpoints": "Active path endpoints are not available in the current graph view.",
+    "noStrictPath": "No strict directed shortest path found in the current graph view.",
+    "pathfindingFailed": "Directed pathfinding failed for the current graph snapshot.",
+    "noVisibleCommunities": "No visible communities in the current graph context.",
+    "noCommunitySummaries": "Community detection has not produced summaries yet.",
+    "readyDegreeBiased": "Ready (degree-biased while betweenness is bounded for large graphs).",
+    "centralityWaiting": "Centrality ranking is waiting for graph data.",
+    "noSemanticRegions": "No semantic regions are visible in the current graph context.",
+    "communityAnchor": "Community anchor"
+  },
+  "timeline": {
+    "playEvolution": "Play Evolution",
+    "pauseEvolution": "Pause Evolution",
+    "label": "Temporal Scrubber · {{min}}-{{max}}"
+  }
+}

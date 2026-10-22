@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "explore": {
+      "label": "知识探索器",
+      "hint": "浏览图与词表"
+    },
+    "analyze": {
+      "label": "分析",
+      "hint": "查询并检视数据集"
+    },
+    "decisions": {
+      "label": "决策",
+      "hint": "决策链与先例审阅"
+    },
+    "enrich": {
+      "label": "增强",
+      "hint": "导入、导出与合并流程"
+    },
+    "manage": {
+      "label": "管理",
+      "hint": "血缘与治理工具"
+    },
+    "ontologyHub": {
+      "label": "本体中心",
+      "hint": "模式治理、注册表与词表管理"
+    }
+  },
+  "kicker": "工作区",
+  "loading": "正在加载工作区…",
+  "brandTitle": "Semantica Knowledge Explorer",
+  "discardDraft": "放弃未应用的 Markdown 草稿并离开此资源?",
+  "workspace": {
+    "explore": {
+      "title": "探索",
+      "subtitle": {
+        "graph": "浏览图并在不离开工作区的情况下切换视图。",
+        "memories": "浏览并编辑规范的 AgentMemory 文档。"
+      },
+      "kicker": {
+        "graph": "图工作台",
+        "memories": "记忆浏览器",
+        "vocabulary": "词表浏览器"
+      }
+    },
+    "analyze": {
+      "title": "分析",
+      "subtitle": "查询当前图并测试推理规则。",
+      "kicker": {
+        "reasoning": "推理引擎",
+        "sparql": "SPARQL 查询"
+      },
+      "tab": {
+        "reasoning": "推理演练场",
+        "sparql": "SPARQL 查询"
+      }
+    },
+    "decisions": {
+      "title": "决策",
+      "subtitle": "查看决策链、因果上下文与先例匹配。",
+      "kicker": "决策智能"
+    },
+    "enrich": {
+      "title": "增强",
+      "subtitle": "导入、导出、协调并审计图实体。",
+      "kicker": "知识审计",
+      "tab": {
+        "import": "导入与导出",
+        "merge": "差异与合并",
+        "resolve": "实体消解",
+        "registry": "注册表"
+      }
+    },
+    "ontology": {
+      "title": "本体中心",
+      "subtitle": "加载、浏览、编辑并治理本体与词表。",
+      "kicker": "模式治理"
+    },
+    "manage": {
+      "title": "管理",
+      "subtitle": "查看溯源、血缘、本体与治理上下文。",
+      "kicker": "图治理",
+      "tab": {
+        "lineage": "PROV-O 血缘",
+        "kgOverview": "KG 概览",
+        "ontology": "本体摘要"
+      }
+    }
+  },
+  "exploreTabs": {
+    "graph": "Semantica Explorer",
+    "memories": "记忆",
+    "vocabulary": "词表浏览器"
+  }
+}

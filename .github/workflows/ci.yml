@@ -83,6 +83,12 @@ jobs:
       - name: Install Explorer frontend dependencies
         working-directory: explorer
         run: npm ci
+      - name: Check Explorer i18n catalogs
+        working-directory: explorer
+        run: npm run check:i18n:strict
+      - name: Lint Explorer for hardcoded JSX copy
+        working-directory: explorer
+        run: npm run lint:i18n
       - name: Install Playwright Chromium
         working-directory: explorer
         run: npx playwright install --with-deps chromium
@@ -90,10 +96,14 @@ jobs:
         working-directory: explorer
         run: |
           npm run test:graph-store
+          npm run test:i18n
           npm run test:graph-workspace
           npm run test:plugin-registry
           npm run test:deterministic-e2e
           npm run test:graph-legend-e2e
+      - name: Test Explorer i18n layout
+        working-directory: explorer
+        run: npm run test:i18n-layout
       - name: Build Explorer frontend
         working-directory: explorer
         run: npm run build

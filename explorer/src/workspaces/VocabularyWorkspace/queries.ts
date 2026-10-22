@@ -1,16 +1,17 @@
 // queries.ts
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import i18n from '../../i18n';
 import type { VocabularyScheme, ConceptNode, ImportResponse } from './types';
 
 const fetchSchemes = async (): Promise<VocabularyScheme[]> => {
   const res = await fetch('/api/vocabulary/schemes');
-  if (!res.ok) throw new Error('Failed to fetch vocabularies');
+  if (!res.ok) throw new Error(i18n.t('failedVocabularies', { ns: 'vocabulary' }));
   return res.json();
 };
 
 const fetchHierarchy = async (schemeUri: string): Promise<ConceptNode[]> => {
   const res = await fetch(`/api/vocabulary/hierarchy?scheme=${encodeURIComponent(schemeUri)}`);
-  if (!res.ok) throw new Error('Failed to fetch hierarchy');
+  if (!res.ok) throw new Error(i18n.t('failedHierarchy', { ns: 'vocabulary' }));
   return res.json();
 };
 
@@ -22,7 +23,7 @@ const importVocabulary = async (file: File): Promise<ImportResponse> => {
     method: 'POST',
     body: formData,
   });
-  if (!res.ok) throw new Error('Failed to import vocabulary');
+  if (!res.ok) throw new Error(i18n.t('failedImport', { ns: 'vocabulary' }));
   return res.json(); 
 };
 

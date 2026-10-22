@@ -1,0 +1,13 @@
+{
+  "httpError": "HTTP {{status}}: API Route missing or failed. {{detail}}",
+  "nonJson": "Backend returned non-JSON response (likely an HTML fallback).",
+  "partialLineage": "Warning: Partial success loading lineage.",
+  "loadFailed": "Failed to load lineage.",
+  "kicker": "PROV-O Lineage",
+  "enterNodeId": "Enter Node ID…",
+  "trace": "Trace",
+  "exportJson": "Export JSON",
+  "exportMd": "Export MD",
+  "viewerTitle": "PROV-O Lineage Viewer",
+  "viewerBody": "Enter a Node ID in the toolbar above and click Trace to view its W3C PROV-O lineage diagram."
+}

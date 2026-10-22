@@ -1,0 +1,53 @@
+{
+  "resolution": {
+    "dismiss": "Dismiss",
+    "primaryKeep": "Primary (keep)",
+    "duplicateRemove": "Duplicate (remove)",
+    "scanFailedWithStatus": "Scan failed ({{status}})",
+    "dedupFound": "Dedup scan found {{count}} flagged pairs (threshold {{threshold}})",
+    "scanFailed": "Scan failed",
+    "partialMerge": "Warning: Partial merge.",
+    "merge": "Merge",
+    "merging": "Scanning…",
+    "title": "Entity Resolution",
+    "subtitle": "Detect and merge duplicate entities in the knowledge graph",
+    "threshold": "Similarity Threshold",
+    "moreResults": "More results (0.50)",
+    "fewerResults": "Fewer, higher confidence (0.99)",
+    "runScan": "Run Dedup Scan",
+    "scanning": "Scanning…",
+    "clearAll": "Clear all",
+    "flaggedPairs_one": "{{count}} flagged pair",
+    "flaggedPairs_other": "{{count}} flagged pairs",
+    "noPairs": "No flagged pairs",
+    "noPairsHint": "Set a similarity threshold and run a dedup scan to detect potential duplicates.",
+    "mergeFailedWithStatus": "Merge failed ({{status}})",
+    "mergedLog": "Merged {{from}} → {{to}} · {{edges}} edges redirected",
+    "mergeFailed": "Merge failed",
+    "mergeHistory": "Merge History"
+  },
+  "registry": {
+    "ops": {
+      "import": "IMPORT",
+      "export": "EXPORT",
+      "merge": "MERGE",
+      "addNode": "ADD NODE",
+      "updateNode": "UPDATE NODE",
+      "addEdge": "ADD EDGE",
+      "delete": "DELETE",
+      "infer": "INFER",
+      "vocabImport": "VOCAB",
+      "all": "All"
+    },
+    "collapseDetails": "Collapse details",
+    "expandDetails": "Expand details",
+    "title": "Document Registry",
+    "subtitle": "Audit log of all KG and Ontology mutations this session",
+    "clearAllTitle": "Clear all events",
+    "clear": "Clear",
+    "eventCount_one": "{{count}} event",
+    "eventCount_other": "{{count}} events",
+    "noEvents": "No events recorded yet",
+    "noEventsHint": "Import a file, run reasoning, or merge entities to see activity appear here."
+  }
+}

@@ -2379,7 +2379,10 @@ function buildCommunityGroupedGraph(): GraphDisplayResult {
       visualPriority: 0.42,
     };
     const size = getGroupedCommunityNodeSize(summary.memberCount);
-    const anchorLabel = summary.anchorAttrs?.label || summary.anchorNodeId || `Community ${communityId}`;
+    // Locale-neutral fallback: grouped community nodes are identified by id
+    // when the summary has no anchor label. Avoids English copy leaking into
+    // non-English locales.
+    const anchorLabel = summary.anchorAttrs?.label || summary.anchorNodeId || `#${communityId}`;
     addNodeIfMissing(grouped, communityNodeId, {
       label: truncateGroupedLabel(anchorLabel),
       content: summary.anchorAttrs?.content || anchorLabel,

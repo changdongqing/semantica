@@ -1,0 +1,22 @@
+{
+  "noChainSteps": "No chain steps",
+  "noChainStepsBody": "No causal chain steps were found for this decision.",
+  "httpStatus": "HTTP {{status}}",
+  "partialDecisions": "Warning: Partial success loading decisions.",
+  "loadDecisionsFailed": "Failed to load decisions.",
+  "partialChain": "Warning: Partial success loading chain.",
+  "loadChainFailed": "Failed to load the causal chain.",
+  "title": "Decisions",
+  "filterPlaceholder": "Filter by ID, category, outcome…",
+  "noDecisions": "No decisions",
+  "noMatches": "No matches",
+  "noDecisionsBody": "No decisions available in the graph.",
+  "adjustFilter": "Adjust your filter.",
+  "record": "Decision Record",
+  "causalChain": "Causal Chain",
+  "stepCount_one": "{{count}} step",
+  "stepCount_other": "{{count}} steps",
+  "unknownOutcome": "unknown",
+  "noSelection": "No decision selected",
+  "noSelectionBody": "Select a decision from the list to inspect its causal chain and metadata."
+}

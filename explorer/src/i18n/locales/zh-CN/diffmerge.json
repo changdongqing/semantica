@@ -1,0 +1,17 @@
+{
+  "title": "实体差异与合并",
+  "subtitle": "并排比较疑似重复项,并将其协调为单个规范实体。",
+  "primaryNodeId": "主节点 ID(保留)",
+  "duplicateNodeId": "重复节点 ID(移除)",
+  "samplePreview": "示例预览",
+  "sampleHint": "— 后端连接后,字段比较将从图中加载",
+  "field": "字段",
+  "primaryKeep": "主项(保留)",
+  "duplicateRemove": "重复项(移除)",
+  "diff": "差异",
+  "unexpectedResponse": "响应异常",
+  "mergeFailed": "合并失败",
+  "merging": "正在合并…",
+  "confirmMerge": "确认合并",
+  "merged": "已合并 → {{target}} · {{edges}} 条边已重定向"
+}

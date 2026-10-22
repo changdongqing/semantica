@@ -5,7 +5,9 @@ import {
   useRef,
   useState,
 } from "react";
+import { useTranslation } from "react-i18next";
 import {
+  MARKDOWN_NETWORK_ERROR_KEY,
   MarkdownClientError,
   applyMarkdownResource,
   readMarkdownResource,
@@ -44,7 +46,7 @@ function normalizeError(failure: unknown): MarkdownEditorError {
   if (failure instanceof MarkdownClientError) return failure;
   return {
     kind: "network",
-    message: "The Markdown service could not be reached. Your draft was kept.",
+    message: MARKDOWN_NETWORK_ERROR_KEY,
   };
 }
 
@@ -53,6 +55,7 @@ export function useMarkdownEditor({
   onApplied,
   onDirtyChange,
 }: MarkdownEditorOptions) {
+  const { t } = useTranslation("graph");
   const resourceKey = keyOf(resource);
   const [session, setSession] = useState<MarkdownEditSession | null>(null);
   const [viewError, setViewError] = useState<KeyedError | null>(null);
@@ -148,10 +151,10 @@ export function useMarkdownEditor({
     if (!resource || saving) return;
     if (
       dirty
-      && !window.confirm("Discard this draft and reload the latest applied version?")
+      && !window.confirm(t("markdown.discardConfirm"))
     ) return;
     await beginEdit();
-  }, [beginEdit, dirty, resource, saving]);
+  }, [beginEdit, dirty, resource, saving, t]);
 
   const changeDraft = useCallback((draft: string) => {
     setSession((current) => (

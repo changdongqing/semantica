@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   AlertCircle,
   BookOpen,
@@ -44,16 +45,17 @@ const ENTITY_TYPE_COLORS: Record<string, string> = {
   unknown: "#6a7f97",
 };
 
-const ENTITY_TYPE_LABELS: Record<string, string> = {
-  class: "Class",
-  property: "Property",
-  individual: "Individual",
-  concept: "Concept",
-  scheme: "Scheme",
-  unknown: "Entity",
+const ENTITY_TYPE_LABEL_KEYS: Record<string, string> = {
+  class: "search.types.class",
+  property: "search.types.property",
+  individual: "search.types.individual",
+  concept: "search.types.concept",
+  scheme: "search.types.scheme",
+  unknown: "search.types.unknown",
 };
 
 function TypeBadge({ entityType }: { entityType: string }) {
+  const { t } = useTranslation("ontology");
   const color = ENTITY_TYPE_COLORS[entityType] || ENTITY_TYPE_COLORS.unknown;
   return (
     <span
@@ -70,7 +72,7 @@ function TypeBadge({ entityType }: { entityType: string }) {
         flexShrink: 0,
       }}
     >
-      {ENTITY_TYPE_LABELS[entityType] || entityType}
+      {ENTITY_TYPE_LABEL_KEYS[entityType] ? t(ENTITY_TYPE_LABEL_KEYS[entityType]) : entityType}
     </span>
   );
 }
@@ -98,6 +100,7 @@ function ResultRow({
   selected: boolean;
   onSelect: () => void;
 }) {
+  const { t } = useTranslation("ontology");
   return (
     <div
       onClick={onSelect}
@@ -130,7 +133,7 @@ function ResultRow({
       )}
       {result.source_ontology && (
         <div style={{ color: "#5a7a9a", fontSize: 10 }}>
-          From: {result.source_ontology}
+          {t("search.from", { source: result.source_ontology })}
         </div>
       )}
     </div>
@@ -138,6 +141,7 @@ function ResultRow({
 }
 
 function CollapsibleList({ label, items }: { label: string; items: string[] }) {
+  const { t } = useTranslation("ontology");
   const [open, setOpen] = useState(false);
   if (!items.length) return null;
   return (
@@ -159,7 +163,7 @@ function CollapsibleList({ label, items }: { label: string; items: string[] }) {
             </div>
           ))}
           {items.length > 12 && (
-            <span style={{ color: "#5a7a9a", fontSize: 10 }}>+{items.length - 12} more</span>
+            <span style={{ color: "#5a7a9a", fontSize: 10 }}>{t("search.moreCount", { count: items.length - 12 })}</span>
           )}
         </div>
       )}
@@ -174,6 +178,7 @@ function DetailPanel({
   uri: string;
   onClose: () => void;
 }) {
+  const { t } = useTranslation("ontology");
   const [detail, setDetail] = useState<EntityDetail | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -190,9 +195,9 @@ function DetailPanel({
     let ignore = false;
     fetch(`/api/ontology/entity/${encodeURIComponent(uri)}`)
       .then(async (r) => {
-        if (!r.ok) throw new Error("Not found");
+        if (!r.ok) throw new Error(t("search.notFound"));
         const data = await r.json();
-        if (r.status === 207) setError(data.message || "Warning: Partial success loading entity.");
+        if (r.status === 207) setError(data.message || t("search.partialLoad"));
         return data;
       })
       .then((data) => {
@@ -205,7 +210,7 @@ function DetailPanel({
         if (!ignore) setLoading(false);
       });
     return () => { ignore = true; };
-  }, [uri]);
+  }, [uri, t]);
 
   return (
     <div style={detailPanelStyle}>
@@ -213,7 +218,7 @@ function DetailPanel({
         <div style={{ display: "flex", alignItems: "center", gap: 8, minWidth: 0 }}>
           <BookOpen size={14} color="#d2a8ff" />
           <span style={{ color: "#ebf3ff", fontSize: 13, fontWeight: 700, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-            Entity Detail
+            {t("search.detailTitle")}
           </span>
         </div>
         <button onClick={onClose} style={closeDetailBtnStyle}>
@@ -249,7 +254,7 @@ function DetailPanel({
           </div>
 
           {detail.definition && (
-            <DetailSection label="Definition">
+            <DetailSection label={t("search.definition")}>
               <p style={{ margin: 0, color: "#c6d4e3", fontSize: 13, lineHeight: 1.6 }}>
                 {detail.definition}
               </p>
@@ -257,20 +262,20 @@ function DetailPanel({
           )}
 
           {detail.instance_count > 0 && (
-            <DetailSection label="Instances">
+            <DetailSection label={t("search.instances")}>
               <span style={{ color: "#9ee8d7", fontSize: 14, fontWeight: 800 }}>
                 {detail.instance_count.toLocaleString()}
               </span>
             </DetailSection>
           )}
 
-          <CollapsibleList label="Superclasses / Broader" items={detail.superclasses} />
-          <CollapsibleList label="Subclasses / Narrower" items={detail.subclasses} />
-          <CollapsibleList label="Domain" items={detail.domain} />
-          <CollapsibleList label="Range" items={detail.range} />
+          <CollapsibleList label={t("search.superclasses")} items={detail.superclasses} />
+          <CollapsibleList label={t("search.subclasses")} items={detail.subclasses} />
+          <CollapsibleList label={t("search.domain")} items={detail.domain} />
+          <CollapsibleList label={t("search.range")} items={detail.range} />
 
           {detail.source_ontology && (
-            <DetailSection label="Source Ontology">
+            <DetailSection label={t("search.sourceOntology")}>
               <span style={{ color: "#c6d4e3", fontSize: 12, fontFamily: "monospace" }}>
                 {detail.source_ontology}
               </span>
@@ -284,7 +289,7 @@ function DetailPanel({
             style={openUriStyle}
           >
             <ExternalLink size={11} />
-            Open URI
+            {t("search.openUri")}
           </a>
         </div>
       )}
@@ -308,6 +313,7 @@ function DetailSection({ label, children }: { label: string; children: React.Rea
 // ---------------------------------------------------------------------------
 
 export function OntologySearch() {
+  const { t } = useTranslation("ontology");
   const [query, setQuery] = useState("");
   const [entityType, setEntityType] = useState<string>("all");
   const [results, setResults] = useState<SearchResult[]>([]);
@@ -315,7 +321,7 @@ export function OntologySearch() {
   const [selectedUri, setSelectedUri] = useState<string | null>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const runSearch = async (q: string, type: string) => {
+  const runSearch = useCallback(async (q: string, type: string) => {
     if (!q.trim()) {
       setResults([]);
       return;
@@ -325,20 +331,20 @@ export function OntologySearch() {
       const params = new URLSearchParams({ q: q.trim(), limit: "80" });
       if (type !== "all") params.set("entity_type", type);
       const res = await fetch(`/api/ontology/search?${params}`);
-      if (!res.ok) throw new Error("Search failed");
+      if (!res.ok) throw new Error(t("search.searchFailed"));
       setResults(await res.json());
     } catch {
       setResults([]);
     } finally {
       setSearching(false);
     }
-  };
+  }, [t]);
 
   useEffect(() => {
     if (timerRef.current) clearTimeout(timerRef.current);
     timerRef.current = setTimeout(() => runSearch(query, entityType), 320);
     return () => { if (timerRef.current) clearTimeout(timerRef.current); };
-  }, [query, entityType]);
+  }, [query, entityType, runSearch]);
 
   return (
     <div style={searchShellStyle}>
@@ -350,7 +356,7 @@ export function OntologySearch() {
             autoFocus
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search classes, properties, concepts…"
+            placeholder={t("search.placeholder")}
             style={searchInputStyle}
           />
           {searching && <Loader2 size={13} color="#4aa3ff" style={{ animation: "spin 0.8s linear infinite", flexShrink: 0 }} />}
@@ -362,16 +368,16 @@ export function OntologySearch() {
         </div>
 
         <div style={typeFilterStyle}>
-          {(["all", "class", "property", "individual", "concept", "scheme"] as const).map((t) => (
+          {(["all", "class", "property", "individual", "concept", "scheme"] as const).map((type) => (
             <button
-              key={t}
-              onClick={() => setEntityType(t)}
+              key={type}
+              onClick={() => setEntityType(type)}
               style={{
                 ...typeFilterBtnBase,
-                ...(entityType === t ? typeFilterBtnActive : typeFilterBtnIdle),
+                ...(entityType === type ? typeFilterBtnActive : typeFilterBtnIdle),
               }}
             >
-              {t === "all" ? "All" : ENTITY_TYPE_LABELS[t] || t}
+              {type === "all" ? t("search.all") : t(ENTITY_TYPE_LABEL_KEYS[type] || type)}
             </button>
           ))}
         </div>
@@ -384,21 +390,21 @@ export function OntologySearch() {
             <div style={hintStyle}>
               <Search size={20} color="rgba(74,163,255,0.2)" />
               <span style={{ color: "#6a7f97", fontSize: 12, marginTop: 8 }}>
-                Type to search across all loaded ontologies
+                {t("search.prompt")}
               </span>
             </div>
           )}
 
           {query && results.length === 0 && !searching && (
             <div style={hintStyle}>
-              <span style={{ color: "#6a7f97", fontSize: 12 }}>No results for "{query}"</span>
+              <span style={{ color: "#6a7f97", fontSize: 12 }}>{t("search.noResults", { query })}</span>
             </div>
           )}
 
           {results.length > 0 && (
             <div style={{ padding: "10px 12px", display: "flex", flexDirection: "column", gap: 6 }}>
               <div style={{ color: "#6a7f97", fontSize: 11, fontWeight: 700, marginBottom: 2 }}>
-                {results.length} result{results.length !== 1 ? "s" : ""}
+                {t("search.resultCount", { count: results.length })}
               </div>
               {results.map((r) => (
                 <ResultRow

@@ -6,6 +6,7 @@ on:
     paths:
       - 'docs/**'
       - 'docs_check.py'
+      - 'docs_check_locale.py'
       - 'CHANGELOG.md'
       - 'RELEASE.md'
   pull_request:
@@ -13,6 +14,7 @@ on:
     paths:
       - 'docs/**'
       - 'docs_check.py'
+      - 'docs_check_locale.py'
   workflow_dispatch:
 
 permissions:
@@ -37,6 +39,8 @@ jobs:
         with:
           node-version: '20'
       - run: python docs_check.py
+      - name: Check translation coverage
+        run: python docs_check_locale.py --strict
 
   deploy:
     name: Build and Deploy to GitHub Pages
@@ -53,7 +57,7 @@ jobs:
       - name: Export static site
         run: |
           cd docs
-          npx mintlify export --output ../export.zip
+          npx --yes mintlify@4.2.632 export --output ../export.zip
           cd ..
           unzip -q export.zip -d site
 

@@ -1,0 +1,9 @@
+{
+  "app": {
+    "documentTitle": "Semantica Knowledge Explorer"
+  },
+  "language": {
+    "label": "语言",
+    "current": "当前语言:{{language}}"
+  }
+}

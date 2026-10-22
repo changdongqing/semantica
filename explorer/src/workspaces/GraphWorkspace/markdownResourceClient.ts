@@ -3,6 +3,9 @@ import type {
   MarkdownResourceRef,
 } from "./markdownEditorState";
 
+/** Key resolved by the UI; client-generated errors stay locale-neutral. */
+export const MARKDOWN_NETWORK_ERROR_KEY = "markdown.errors.serviceUnavailable";
+
 export interface MarkdownDocument {
   resource: MarkdownResourceRef;
   source: string;
@@ -76,7 +79,7 @@ async function request<T>(input: RequestInfo | URL, init?: RequestInit): Promise
     if (error instanceof MarkdownClientError) throw error;
     throw new MarkdownClientError({
       kind: "network",
-      message: "The Markdown service could not be reached. Your draft was kept.",
+      message: MARKDOWN_NETWORK_ERROR_KEY,
     });
   }
 }

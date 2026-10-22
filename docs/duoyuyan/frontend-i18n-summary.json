@@ -1,0 +1,116 @@
+{
+  "files_scanned": 95,
+  "files_with_strings": 23,
+  "total_occurrences": 71,
+  "unique_strings": 62,
+  "by_confidence": {
+    "high": 52,
+    "medium": 19
+  },
+  "by_kind": {
+    "jsx_text": 2,
+    "string": 67,
+    "attr": 2
+  },
+  "by_area": {
+    "workspaces/GraphWorkspace": 39,
+    "workspaces/DiffMergeWorkspace": 10,
+    "workspaces/OntologyWorkspace": 9,
+    "workspaces/EnrichWorkspace": 5,
+    "workspaces/ReasoningWorkspace.tsx": 4,
+    "workspaces/MemoryWorkspace.tsx": 1,
+    "workspaces/SparqlWorkspace": 1,
+    "workspaces/VocabularyWorkspace": 1,
+    "workspaces/DecisionWorkspace": 1
+  },
+  "top_files": [
+    {
+      "file": "explorer/src/workspaces/GraphWorkspace/graphTheme.ts",
+      "count": 16
+    },
+    {
+      "file": "explorer/src/workspaces/DiffMergeWorkspace/DiffMergeWorkspace.tsx",
+      "count": 10
+    },
+    {
+      "file": "explorer/src/workspaces/GraphWorkspace/GraphWorkspace.tsx",
+      "count": 7
+    },
+    {
+      "file": "explorer/src/workspaces/GraphWorkspace/MarkdownContentViewer.tsx",
+      "count": 5
+    },
+    {
+      "file": "explorer/src/workspaces/ReasoningWorkspace.tsx",
+      "count": 4
+    },
+    {
+      "file": "explorer/src/workspaces/EnrichWorkspace/EntityResolutionTab.tsx",
+      "count": 3
+    },
+    {
+      "file": "explorer/src/workspaces/GraphWorkspace/GraphInspectorPanel.tsx",
+      "count": 3
+    },
+    {
+      "file": "explorer/src/workspaces/GraphWorkspace/GraphLoadingOverlay.tsx",
+      "count": 3
+    },
+    {
+      "file": "explorer/src/workspaces/OntologyWorkspace/AlignmentsTab.tsx",
+      "count": 3
+    },
+    {
+      "file": "explorer/src/workspaces/EnrichWorkspace/RegistryTab.tsx",
+      "count": 2
+    },
+    {
+      "file": "explorer/src/workspaces/GraphWorkspace/nodeMarkdownSync.ts",
+      "count": 2
+    },
+    {
+      "file": "explorer/src/workspaces/OntologyWorkspace/OntologyLoader.tsx",
+      "count": 2
+    },
+    {
+      "file": "explorer/src/workspaces/MemoryWorkspace.tsx",
+      "count": 1
+    },
+    {
+      "file": "explorer/src/workspaces/SparqlWorkspace/SparqlWorkspace.tsx",
+      "count": 1
+    },
+    {
+      "file": "explorer/src/workspaces/VocabularyWorkspace/VocabularyWorkspace.tsx",
+      "count": 1
+    },
+    {
+      "file": "explorer/src/workspaces/DecisionWorkspace/DecisionWorkspace.tsx",
+      "count": 1
+    },
+    {
+      "file": "explorer/src/workspaces/GraphWorkspace/GraphCanvas.tsx",
+      "count": 1
+    },
+    {
+      "file": "explorer/src/workspaces/GraphWorkspace/plugins/neighborhoodPanelPlugin.tsx",
+      "count": 1
+    },
+    {
+      "file": "explorer/src/workspaces/GraphWorkspace/plugins/temporalOverlayPlugin.tsx",
+      "count": 1
+    },
+    {
+      "file": "explorer/src/workspaces/OntologyWorkspace/HealthTab.tsx",
+      "count": 1
+    }
+  ],
+  "high_unique": 46,
+  "unique_all": 62,
+  "unique_high_medium": 62,
+  "unique_by_confidence": {
+    "high": 46,
+    "medium": 16
+  },
+  "total_occurrences_unique": 71
+}

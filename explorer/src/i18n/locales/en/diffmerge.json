@@ -1,0 +1,17 @@
+{
+  "title": "Entity Diff & Merge",
+  "subtitle": "Compare suspected duplicates side-by-side and reconcile them into a single canonical entity.",
+  "primaryNodeId": "Primary Node ID (keep)",
+  "duplicateNodeId": "Duplicate Node ID (remove)",
+  "samplePreview": "Sample preview",
+  "sampleHint": "— field comparison will load from the graph once the backend is connected",
+  "field": "Field",
+  "primaryKeep": "Primary (keep)",
+  "duplicateRemove": "Duplicate (remove)",
+  "diff": "diff",
+  "unexpectedResponse": "Unexpected response",
+  "mergeFailed": "Merge failed",
+  "merging": "Merging…",
+  "confirmMerge": "Confirm Merge",
+  "merged": "Merged → {{target}} · {{edges}} edges redirected"
+}

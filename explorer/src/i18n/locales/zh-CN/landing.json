@@ -1,0 +1,88 @@
+{
+  "hero": {
+    "title": "像<em>生命系统</em>一样<br/>浏览知识",
+    "subtitle": "Semantica 将密集的知识图谱转化为可导航的指挥中心——发现、推理、溯源、距离智能与决策上下文,尽在同一个界面。",
+    "primaryCta": "打开 Semantica 探索器",
+    "secondaryCta": "运行推理"
+  },
+  "kicker": "知识探索器",
+  "status": {
+    "checking": "正在连接…",
+    "online": "系统在线",
+    "offline": "后端不可达",
+    "version": "Semantica v2 · 语义智能"
+  },
+  "aria": {
+    "productCategory": "产品类别",
+    "preview": "知识图谱预览",
+    "systemStatus": "系统状态",
+    "workspaces": "工作区",
+    "capabilities": "智能能力"
+  },
+  "preview": {
+    "tab": "Semantica 探索器",
+    "search": "搜索命令、节点或概念",
+    "meta": "距离热力图 · 聚焦视图 · 因果路径",
+    "dossier": {
+      "title": "实体档案",
+      "distanceBand": "距离区间",
+      "near": "近",
+      "pathCoherence": "路径连贯度",
+      "provenance": "溯源",
+      "audited": "已审计"
+    },
+    "timeline": {
+      "title": "时间证据",
+      "coverage": "66% 覆盖"
+    }
+  },
+  "metrics": {
+    "knowledgeNodes": "知识节点",
+    "relationshipsMapped": "已映射关系",
+    "graphModes": "图模式",
+    "datasetOnline": "数据集在线",
+    "readyToExplore": "准备探索",
+    "live": "在线",
+    "ready": "就绪",
+    "active": "活跃",
+    "standby": "待机"
+  },
+  "sections": {
+    "workspaces": "工作区",
+    "primaryWorkspace": "主工作区"
+  },
+  "primary": {
+    "title": "Semantica 探索器",
+    "description": "完整图、分组社区、聚焦邻域与距离智能——尽在一块画布。"
+  },
+  "actions": {
+    "vocabulary": {
+      "label": "词表",
+      "description": "方案与术语"
+    },
+    "analyze": {
+      "label": "分析",
+      "description": "推理与查询"
+    },
+    "decisions": {
+      "label": "决策",
+      "description": "链与先例"
+    },
+    "enrich": {
+      "label": "增强",
+      "description": "导入与消解"
+    },
+    "manage": {
+      "label": "管理",
+      "description": "血缘与本体"
+    }
+  },
+  "capabilities": {
+    "title": "智能层",
+    "distanceHeatmap": "距离热力图",
+    "focusedNeighborhood": "聚焦邻域",
+    "groupedCommunities": "分组社区",
+    "traceCausalPath": "追踪因果路径",
+    "provenanceDossier": "溯源档案"
+  }
+}

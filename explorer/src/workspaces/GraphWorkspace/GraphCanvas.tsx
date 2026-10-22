@@ -1,4 +1,6 @@
 import { useEffect, useMemo, useRef, useCallback, forwardRef, useImperativeHandle, useState, type ReactNode } from "react";
+import { useTranslation } from "react-i18next";
+import type { TFunction } from "i18next";
 import Sigma from "sigma";
 import FA2Layout from "graphology-layout-forceatlas2/worker";
 import { graph, type EdgeAttributes, type NodeAttributes } from "../../store/graphStore";
@@ -546,6 +548,7 @@ function buildEffectAvailability(
   sigma: Sigma | null,
   viewportWidth: number,
   viewportHeight: number,
+  t: TFunction,
 ): GraphDiagnosticsSnapshot["effectAvailability"] {
   const visiblePathSegments = sigma
     ? collectPathSegments(
@@ -565,197 +568,207 @@ function buildEffectAvailability(
   const regionsTierReady = zoomTierAtLeast(interactionState.zoomTier, GRAPH_THEME.effects.semanticRegions.minZoomTier);
   const contoursTierReady = zoomTierAtLeast(interactionState.zoomTier, GRAPH_THEME.effects.contours.minZoomTier);
   const hasPrimaryNode = Boolean(interactionState.hoveredNodeId || interactionState.selectedNodeId);
-  const layoutReason = "Layout is still settling";
+  const layoutReason = t("canvas.layoutSettling");
 
   const pathPulse = !effectsState.pathPulseEnabled
-    ? { enabled: false, available: false, reason: "Disabled by toggle" }
+    ? { enabled: false, available: false, reason: t("canvas.disabledByToggle") }
     : isLayoutRunning
       ? { enabled: true, available: false, reason: layoutReason }
     : !hasActivePath
-      ? { enabled: true, available: false, reason: "No active path" }
+      ? { enabled: true, available: false, reason: t("canvas.noActivePath") }
       : !pulseTierReady
         ? {
             enabled: true,
             available: false,
-            reason: "Disabled by zoom tier",
-            detail: `Requires ${GRAPH_THEME.effects.pathPulse.minZoomTier}`,
+            reason: t("canvas.disabledByZoomTier"),
+            detail: t("canvas.requiresTier", { tier: GRAPH_THEME.effects.pathPulse.minZoomTier }),
           }
         : visiblePathSegments === 0
-          ? { enabled: true, available: false, reason: "Path is off-screen" }
+          ? { enabled: true, available: false, reason: t("canvas.pathOffscreen") }
           : visiblePathSegments > GRAPH_THEME.effects.pathPulse.maxSegments
             ? {
                 enabled: true,
                 available: false,
-                reason: "Disabled by path size cap",
-                detail: `${visiblePathSegments} visible segments`,
+                reason: t("canvas.disabledBySizeCap"),
+                detail: t("canvas.visibleSegments", { count: visiblePathSegments }),
                 visibleSegments: visiblePathSegments,
                 segmentCap: GRAPH_THEME.effects.pathPulse.maxSegments,
               }
             : {
                 enabled: true,
                 available: true,
-                reason: "Ready",
+                reason: t("canvas.ready"),
                 visibleSegments: visiblePathSegments,
                 segmentCap: GRAPH_THEME.effects.pathPulse.maxSegments,
               };
 
   const pathFlow = !effectsState.pathFlowEnabled
-    ? { enabled: false, available: false, reason: "Disabled by toggle" }
+    ? { enabled: false, available: false, reason: t("canvas.disabledByToggle") }
     : isLayoutRunning
       ? { enabled: true, available: false, reason: layoutReason }
     : !hasActivePath
-      ? { enabled: true, available: false, reason: "No active path" }
+      ? { enabled: true, available: false, reason: t("canvas.noActivePath") }
       : !flowTierReady
         ? {
             enabled: true,
             available: false,
-            reason: "Disabled by zoom tier",
-            detail: `Requires ${GRAPH_THEME.effects.pathFlow.minZoomTier}`,
+            reason: t("canvas.disabledByZoomTier"),
+            detail: t("canvas.requiresTier", { tier: GRAPH_THEME.effects.pathFlow.minZoomTier }),
           }
         : visiblePathSegments === 0
-          ? { enabled: true, available: false, reason: "Path is off-screen" }
+          ? { enabled: true, available: false, reason: t("canvas.pathOffscreen") }
           : visiblePathSegments > GRAPH_THEME.effects.pathFlow.maxSegments
             ? {
                 enabled: true,
                 available: false,
-                reason: "Disabled by path size cap",
-                detail: `${visiblePathSegments} visible segments`,
+                reason: t("canvas.disabledBySizeCap"),
+                detail: t("canvas.visibleSegments", { count: visiblePathSegments }),
                 visibleSegments: visiblePathSegments,
                 segmentCap: GRAPH_THEME.effects.pathFlow.maxSegments,
               }
             : {
                 enabled: true,
                 available: true,
-                reason: "Ready",
+                reason: t("canvas.ready"),
                 visibleSegments: visiblePathSegments,
                 segmentCap: GRAPH_THEME.effects.pathFlow.maxSegments,
               };
 
   const lens = !effectsState.lensEnabled
-    ? { enabled: false, available: false, reason: "Disabled by toggle" }
+    ? { enabled: false, available: false, reason: t("canvas.disabledByToggle") }
     : isLayoutRunning
       ? { enabled: true, available: false, reason: layoutReason }
     : !hasPrimaryNode
-      ? { enabled: true, available: false, reason: "No focal node" }
+      ? { enabled: true, available: false, reason: t("canvas.noFocalNode") }
       : !lensTierReady
         ? {
             enabled: true,
             available: false,
-            reason: "Disabled by zoom tier",
-            detail: `Requires ${GRAPH_THEME.effects.lens.minZoomTier}`,
+            reason: t("canvas.disabledByZoomTier"),
+            detail: t("canvas.requiresTier", { tier: GRAPH_THEME.effects.lens.minZoomTier }),
           }
-        : { enabled: true, available: true, reason: "Ready" };
+        : { enabled: true, available: true, reason: t("canvas.ready") };
 
   const temporalEmphasis = !effectsState.temporalEmphasisEnabled
-    ? { enabled: false, available: false, reason: "Disabled by toggle" }
+    ? { enabled: false, available: false, reason: t("canvas.disabledByToggle") }
     : isLayoutRunning
       ? { enabled: true, available: false, reason: layoutReason }
     : !temporalState?.currentTime
-      ? { enabled: true, available: false, reason: "No temporal focus time" }
+      ? { enabled: true, available: false, reason: t("canvas.noTemporalFocus") }
       : !temporalTierReady
         ? {
             enabled: true,
             available: false,
-            reason: "Disabled by zoom tier",
-            detail: `Requires ${GRAPH_THEME.effects.temporalEmphasis.minZoomTier}`,
+            reason: t("canvas.disabledByZoomTier"),
+            detail: t("canvas.requiresTier", { tier: GRAPH_THEME.effects.temporalEmphasis.minZoomTier }),
           }
-        : { enabled: true, available: true, reason: "Ready" };
+        : { enabled: true, available: true, reason: t("canvas.ready") };
 
   const semanticRegions = !effectsState.semanticRegionsEnabled
-    ? { enabled: false, available: false, reason: "Disabled by toggle" }
+    ? { enabled: false, available: false, reason: t("canvas.disabledByToggle") }
     : isLayoutRunning
       ? { enabled: true, available: false, reason: layoutReason }
     : !regionsTierReady
       ? {
           enabled: true,
           available: false,
-          reason: "Disabled by zoom tier",
-          detail: `Requires ${GRAPH_THEME.effects.semanticRegions.minZoomTier}`,
+          reason: t("canvas.disabledByZoomTier"),
+          detail: t("canvas.requiresTier", { tier: GRAPH_THEME.effects.semanticRegions.minZoomTier }),
         }
       : !analytics?.semanticRegions.ready
         ? {
             enabled: true,
             available: false,
-            reason: analytics?.semanticRegions.reason ?? "Waiting for semantic region summaries",
+            reason: analytics?.semanticRegions.reason
+              ? t(analytics.semanticRegions.reason)
+              : t("canvas.waitingSemanticRegions"),
           }
-        : { enabled: true, available: true, reason: analytics.semanticRegions.reason };
+        : { enabled: true, available: true, reason: t(analytics.semanticRegions.reason) };
 
   const contours = !effectsState.contoursEnabled
-    ? { enabled: false, available: false, reason: "Disabled by toggle" }
+    ? { enabled: false, available: false, reason: t("canvas.disabledByToggle") }
     : isLayoutRunning
       ? { enabled: true, available: false, reason: layoutReason }
     : !contoursTierReady
       ? {
           enabled: true,
           available: false,
-          reason: "Disabled by zoom tier",
-          detail: `Requires ${GRAPH_THEME.effects.contours.minZoomTier}`,
+          reason: t("canvas.disabledByZoomTier"),
+          detail: t("canvas.requiresTier", { tier: GRAPH_THEME.effects.contours.minZoomTier }),
         }
       : !analytics?.centrality.ready
         ? {
             enabled: true,
             available: false,
-            reason: analytics?.centrality.reason ?? "Waiting for centrality ranking",
+            reason: analytics?.centrality.reason
+              ? t(analytics.centrality.reason)
+              : t("canvas.waitingCentrality"),
           }
-        : { enabled: true, available: true, reason: analytics.centrality.reason };
+        : { enabled: true, available: true, reason: t(analytics.centrality.reason) };
 
   const pathfinding = !effectsState.pathfindingEnabled
-    ? { enabled: false, available: false, reason: "Disabled by toggle" }
+    ? { enabled: false, available: false, reason: t("canvas.disabledByToggle") }
     : !analytics?.directedPath.ready
       ? {
           enabled: true,
           available: false,
-          reason: analytics?.directedPath.reason ?? "Waiting for a traced path",
+          reason: analytics?.directedPath.reason
+            ? t(analytics.directedPath.reason)
+            : t("canvas.waitingTracedPath"),
         }
       : {
           enabled: true,
           available: true,
           reason: analytics.directedPath.verifiedAgainstActivePath
-            ? "Ready · local path matches traced path"
-            : "Ready · local directed path differs from traced path",
+            ? t("canvas.readyPathMatches")
+            : t("canvas.readyPathDiffers"),
         };
 
   const communities = !effectsState.communitiesEnabled
-    ? { enabled: false, available: false, reason: "Disabled by toggle" }
+    ? { enabled: false, available: false, reason: t("canvas.disabledByToggle") }
     : !analytics?.communities.ready
       ? {
           enabled: true,
           available: false,
-          reason: analytics?.communities.reason ?? "Waiting for community summaries",
+          reason: analytics?.communities.reason
+            ? t(analytics.communities.reason)
+            : t("canvas.waitingCommunitySummaries"),
         }
       : {
           enabled: true,
           available: true,
           reason: analytics.communities.modularity !== null
-            ? `Ready · modularity ${analytics.communities.modularity.toFixed(3)}`
-            : analytics.communities.reason,
+            ? t("canvas.readyModularity", { value: analytics.communities.modularity.toFixed(3) })
+            : t(analytics.communities.reason),
         };
 
   const centrality = !effectsState.centralityEnabled
-    ? { enabled: false, available: false, reason: "Disabled by toggle" }
+    ? { enabled: false, available: false, reason: t("canvas.disabledByToggle") }
     : !analytics?.centrality.ready
       ? {
           enabled: true,
           available: false,
-          reason: analytics?.centrality.reason ?? "Waiting for centrality ranking",
+          reason: analytics?.centrality.reason
+            ? t(analytics.centrality.reason)
+            : t("canvas.waitingCentrality"),
         }
       : { enabled: true, available: true, reason: analytics.centrality.reason };
 
   const legend = effectsState.legendEnabled
-    ? { enabled: true, available: true, reason: "Panel enabled" }
-    : { enabled: false, available: false, reason: "Disabled by toggle" };
+    ? { enabled: true, available: true, reason: t("canvas.panelEnabled") }
+    : { enabled: false, available: false, reason: t("canvas.disabledByToggle") };
 
   // #1009: edge labels are immediately available once the graph is loaded —
   // they have no async analytics or zoom-tier dependency.
   const edgeLabels = effectsState.edgeLabelsEnabled
-    ? { enabled: true, available: true, reason: "Ready" }
-    : { enabled: false, available: false, reason: "Disabled by toggle" };
+    ? { enabled: true, available: true, reason: t("canvas.ready") }
+    : { enabled: false, available: false, reason: t("canvas.disabledByToggle") };
 
   const diagnostics = !GRAPH_THEME.effects.diagnostics.enabledInDev
-    ? { enabled: false, available: false, reason: "Disabled in production" }
+    ? { enabled: false, available: false, reason: t("canvas.disabledInProduction") }
     : effectsState.diagnosticsEnabled
-      ? { enabled: true, available: true, reason: "Ready" }
-      : { enabled: false, available: false, reason: "Disabled by toggle" };
+      ? { enabled: true, available: true, reason: t("canvas.ready") }
+      : { enabled: false, available: false, reason: t("canvas.disabledByToggle") };
 
   return {
     pathPulse,
@@ -1288,6 +1301,7 @@ export const GraphCanvas = forwardRef<GraphCanvasHandle, GraphCanvasProps>(
     },
     ref,
   ) {
+    const { t } = useTranslation("graph");
     const containerRef = useRef<HTMLDivElement>(null);
     const overlayRef = useRef<HTMLCanvasElement>(null);
     const structureLayerCanvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -2162,6 +2176,7 @@ export const GraphCanvas = forwardRef<GraphCanvasHandle, GraphCanvasProps>(
         sigma,
         container?.clientWidth ?? 0,
         container?.clientHeight ?? 0,
+        t,
       );
       onDiagnosticsChange({
         effectAvailability: availability,
@@ -2180,6 +2195,7 @@ export const GraphCanvas = forwardRef<GraphCanvasHandle, GraphCanvasProps>(
       isLayoutRunning,
       onDiagnosticsChange,
       structureLayerDiagnostics,
+      t,
       temporalState,
       distanceVisualState,
     ]);
@@ -2312,6 +2328,7 @@ export const GraphCanvas = forwardRef<GraphCanvasHandle, GraphCanvasProps>(
         sigma,
         rect.width,
         rect.height,
+        t,
       );
       const cameraRatio = sigma.getCamera().getState().ratio;
       const nodesToDecorate = new Set<string>([
@@ -2400,7 +2417,7 @@ export const GraphCanvas = forwardRef<GraphCanvasHandle, GraphCanvasProps>(
 
       drawPathEffectsLayer(context, pathSegments, effectsState, effectAvailability, now);
       return effectAvailability.pathPulse.available || effectAvailability.pathFlow.available;
-    }, [analyticsSnapshot, displayGraph, effectsState, interactionState, isLayoutRunning, temporalState]);
+    }, [analyticsSnapshot, displayGraph, effectsState, interactionState, isLayoutRunning, t, temporalState]);
 
     useEffect(() => {
       const sigma = sigmaRef.current;
@@ -2664,7 +2681,7 @@ export const GraphCanvas = forwardRef<GraphCanvasHandle, GraphCanvasProps>(
               letterSpacing: "0.01em",
             }}
           >
-            Fit View
+            {t("canvas.fitView")}
           </button>
         ) : null}
       </div>

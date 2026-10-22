@@ -50,227 +50,462 @@
     "twitter:site": "@BuildSemantica"
   },
   "navigation": {
-    "tabs": [
+    "languages": [
       {
-        "tab": "Overview",
-        "groups": [
+        "language": "en",
+        "default": true,
+        "tabs": [
           {
-            "group": "Overview",
-            "pages": [
-              "index"
+            "tab": "Overview",
+            "groups": [
+              {
+                "group": "Overview",
+                "pages": [
+                  "index"
+                ]
+              },
+              {
+                "group": "Core Concepts",
+                "pages": [
+                  "concepts",
+                  "modules",
+                  "choose-your-module",
+                  "glossary"
+                ]
+              },
+              {
+                "group": "Guides",
+                "pages": [
+                  "architecture",
+                  "learning-more",
+                  "guides/graphrag",
+                  "guides/ingest",
+                  "guides/llm-integrations",
+                  "guides/pipeline",
+                  "guides/multi-agent",
+                  "guides/decision-intelligence",
+                  "guides/context-graphs",
+                  "guides/agent-memory",
+                  "guides/provenance",
+                  "guides/semantic-extraction",
+                  "guides/ontology",
+                  "guides/reasoning",
+                  "guides/export",
+                  "guides/deduplication",
+                  "guides/mcp-server",
+                  "guides/shacl-validation",
+                  "guides/conflict-resolution",
+                  "guides/change-management",
+                  "guides/policy-engine",
+                  "guides/visualization",
+                  "guides/distance-intelligence",
+                  "guides/graph-analytics"
+                ]
+              },
+              {
+                "group": "Integrations",
+                "pages": [
+                  "integrations/agno",
+                  "integrations/crewai",
+                  "integrations/langchain",
+                  "integrations/docling",
+                  "integrations/snowflake",
+                  "integrations/databricks",
+                  "integrations/bigquery",
+                  "integrations/salesforce",
+                  "integrations/dynamics365",
+                  "integrations/airflow",
+                  "integrations/tableau",
+                  "integrations/redshift",
+                  "integrations/cassandra",
+                  "integrations/powerbi",
+                  "integrations/servicenow",
+                  "integrations/looker"
+                ]
+              },
+              {
+                "group": "Graph Stores",
+                "pages": [
+                  "graph_stores/apache_age"
+                ]
+              },
+              {
+                "group": "Vector Stores",
+                "pages": [
+                  "vector_stores/pgvector"
+                ]
+              },
+              {
+                "group": "FAQ",
+                "pages": [
+                  "faq"
+                ]
+              },
+              {
+                "group": "Community",
+                "pages": [
+                  "community",
+                  "community-projects",
+                  "contributing-guide",
+                  "governance",
+                  "citation",
+                  "project-license"
+                ]
+              }
             ]
           },
           {
-            "group": "Core Concepts",
-            "pages": [
-              "concepts",
-              "modules",
-              "choose-your-module",
-              "glossary"
+            "tab": "Quick Start",
+            "groups": [
+              {
+                "group": "Get Started",
+                "pages": [
+                  "installation",
+                  "getting-started",
+                  "quickstart",
+                  "choose-your-module",
+                  "cli-setup",
+                  "explorer-setup"
+                ]
+              }
             ]
           },
           {
-            "group": "Guides",
-            "pages": [
-              "architecture",
-              "learning-more",
-              "guides/graphrag",
-              "guides/ingest",
-              "guides/llm-integrations",
-              "guides/pipeline",
-              "guides/multi-agent",
-              "guides/decision-intelligence",
-              "guides/context-graphs",
-              "guides/agent-memory",
-              "guides/provenance",
-              "guides/semantic-extraction",
-              "guides/ontology",
-              "guides/reasoning",
-              "guides/export",
-              "guides/deduplication",
-              "guides/mcp-server",
-              "guides/shacl-validation",
-              "guides/conflict-resolution",
-              "guides/change-management",
-              "guides/policy-engine",
-              "guides/visualization",
-              "guides/distance-intelligence",
-              "guides/graph-analytics"
+            "tab": "Modules",
+            "groups": [
+              {
+                "group": "Context & Intelligence",
+                "pages": [
+                  "guides/graphrag",
+                  "guides/ingest",
+                  "guides/llm-integrations",
+                  "guides/pipeline",
+                  "guides/multi-agent",
+                  "guides/decision-intelligence",
+                  "guides/context-graphs",
+                  "guides/agent-memory",
+                  "guides/provenance",
+                  "guides/semantic-extraction",
+                  "guides/ontology",
+                  "guides/reasoning",
+                  "guides/export",
+                  "guides/deduplication",
+                  "guides/mcp-server",
+                  "guides/shacl-validation",
+                  "guides/conflict-resolution",
+                  "guides/change-management",
+                  "guides/policy-engine",
+                  "guides/visualization",
+                  "guides/distance-intelligence",
+                  "guides/graph-analytics"
+                ]
+              }
             ]
           },
           {
-            "group": "Integrations",
-            "pages": [
-              "integrations/agno",
-              "integrations/crewai",
-              "integrations/langchain",
-              "integrations/docling",
-              "integrations/snowflake",
-              "integrations/databricks",
-              "integrations/bigquery",
-              "integrations/salesforce",
-              "integrations/dynamics365",
-              "integrations/airflow",
-              "integrations/tableau",
-              "integrations/redshift",
-              "integrations/cassandra",
-              "integrations/powerbi",
-              "integrations/servicenow",
-              "integrations/looker"
+            "tab": "API Reference",
+            "groups": [
+              {
+                "group": "Context & Intelligence",
+                "pages": [
+                  "reference/context",
+                  "reference/kg",
+                  "reference/temporal",
+                  "reference/distance",
+                  "reference/semantic_extract",
+                  "reference/reasoning",
+                  "reference/truth_maintenance",
+                  "reference/temporal_truth_maintenance",
+                  "reference/ontology"
+                ]
+              },
+              {
+                "group": "Storage",
+                "pages": [
+                  "reference/vector_store",
+                  "reference/graph_store",
+                  "reference/triplet_store"
+                ]
+              },
+              {
+                "group": "Data Pipeline",
+                "pages": [
+                  "reference/ingest",
+                  "reference/parse",
+                  "reference/split",
+                  "reference/normalize",
+                  "reference/embeddings",
+                  "reference/pipeline"
+                ]
+              },
+              {
+                "group": "Quality & Provenance",
+                "pages": [
+                  "reference/deduplication",
+                  "reference/conflicts",
+                  "reference/provenance",
+                  "reference/change_management"
+                ]
+              },
+              {
+                "group": "Output",
+                "pages": [
+                  "reference/export",
+                  "reference/visualization",
+                  "reference/explorer"
+                ]
+              },
+              {
+                "group": "Utilities",
+                "pages": [
+                  "reference/llms",
+                  "reference/seed",
+                  "reference/evals",
+                  "reference/utils",
+                  "reference/core",
+                  "reference/mcp_server"
+                ]
+              }
             ]
           },
           {
-            "group": "Graph Stores",
-            "pages": [
-              "graph_stores/apache_age"
-            ]
-          },
-          {
-            "group": "Vector Stores",
-            "pages": [
-              "vector_stores/pgvector"
-            ]
-          },
-          {
-            "group": "FAQ",
-            "pages": [
-              "faq"
-            ]
-          },
-          {
-            "group": "Community",
-            "pages": [
-              "community",
-              "community-projects",
-              "contributing-guide",
-              "governance",
-              "citation",
-              "project-license"
+            "tab": "Cookbook",
+            "groups": [
+              {
+                "group": "Cookbook",
+                "pages": [
+                  "cookbook"
+                ]
+              }
             ]
           }
         ]
       },
       {
-        "tab": "Quick Start",
-        "groups": [
+        "language": "zh-Hans",
+        "tabs": [
           {
-            "group": "Get Started",
-            "pages": [
-              "installation",
-              "getting-started",
-              "quickstart",
-              "choose-your-module",
-              "cli-setup",
-              "explorer-setup"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Modules",
-        "groups": [
-          {
-            "group": "Context & Intelligence",
-            "pages": [
-              "guides/graphrag",
-              "guides/ingest",
-              "guides/llm-integrations",
-              "guides/pipeline",
-              "guides/multi-agent",
-              "guides/decision-intelligence",
-              "guides/context-graphs",
-              "guides/agent-memory",
-              "guides/provenance",
-              "guides/semantic-extraction",
-              "guides/ontology",
-              "guides/reasoning",
-              "guides/export",
-              "guides/deduplication",
-              "guides/mcp-server",
-              "guides/shacl-validation",
-              "guides/conflict-resolution",
-              "guides/change-management",
-              "guides/policy-engine",
-              "guides/visualization",
-              "guides/distance-intelligence",
-              "guides/graph-analytics"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
-          {
-            "group": "Context & Intelligence",
-            "pages": [
-              "reference/context",
-              "reference/kg",
-              "reference/temporal",
-              "reference/distance",
-              "reference/semantic_extract",
-              "reference/reasoning",
-              "reference/truth_maintenance",
-              "reference/temporal_truth_maintenance",
-              "reference/ontology"
+            "tab": "概览",
+            "groups": [
+              {
+                "group": "概览",
+                "pages": [
+                  "zh/index"
+                ]
+              },
+              {
+                "group": "核心概念",
+                "pages": [
+                  "zh/concepts",
+                  "zh/modules",
+                  "zh/choose-your-module",
+                  "zh/glossary"
+                ]
+              },
+              {
+                "group": "指南",
+                "pages": [
+                  "zh/architecture",
+                  "zh/learning-more",
+                  "zh/guides/graphrag",
+                  "zh/guides/ingest",
+                  "zh/guides/llm-integrations",
+                  "zh/guides/pipeline",
+                  "zh/guides/multi-agent",
+                  "zh/guides/decision-intelligence",
+                  "zh/guides/context-graphs",
+                  "zh/guides/agent-memory",
+                  "zh/guides/provenance",
+                  "zh/guides/semantic-extraction",
+                  "zh/guides/ontology",
+                  "zh/guides/reasoning",
+                  "zh/guides/export",
+                  "zh/guides/deduplication",
+                  "zh/guides/mcp-server",
+                  "zh/guides/shacl-validation",
+                  "zh/guides/conflict-resolution",
+                  "zh/guides/change-management",
+                  "zh/guides/policy-engine",
+                  "zh/guides/visualization",
+                  "zh/guides/distance-intelligence",
+                  "zh/guides/graph-analytics"
+                ]
+              },
+              {
+                "group": "集成",
+                "pages": [
+                  "zh/integrations/agno",
+                  "zh/integrations/crewai",
+                  "zh/integrations/langchain",
+                  "zh/integrations/docling",
+                  "zh/integrations/snowflake",
+                  "zh/integrations/databricks",
+                  "zh/integrations/bigquery",
+                  "zh/integrations/salesforce",
+                  "zh/integrations/dynamics365",
+                  "zh/integrations/airflow",
+                  "zh/integrations/tableau",
+                  "zh/integrations/redshift",
+                  "zh/integrations/cassandra",
+                  "zh/integrations/powerbi",
+                  "zh/integrations/servicenow",
+                  "zh/integrations/looker"
+                ]
+              },
+              {
+                "group": "图存储",
+                "pages": [
+                  "zh/graph_stores/apache_age"
+                ]
+              },
+              {
+                "group": "向量存储",
+                "pages": [
+                  "zh/vector_stores/pgvector"
+                ]
+              },
+              {
+                "group": "常见问题",
+                "pages": [
+                  "zh/faq"
+                ]
+              },
+              {
+                "group": "社区",
+                "pages": [
+                  "zh/community",
+                  "zh/community-projects",
+                  "zh/contributing-guide",
+                  "zh/governance",
+                  "zh/citation",
+                  "zh/project-license"
+                ]
+              }
             ]
           },
           {
-            "group": "Storage",
-            "pages": [
-              "reference/vector_store",
-              "reference/graph_store",
-              "reference/triplet_store"
+            "tab": "快速开始",
+            "groups": [
+              {
+                "group": "开始使用",
+                "pages": [
+                  "zh/installation",
+                  "zh/getting-started",
+                  "zh/quickstart",
+                  "zh/choose-your-module",
+                  "zh/cli-setup",
+                  "zh/explorer-setup"
+                ]
+              }
             ]
           },
           {
-            "group": "Data Pipeline",
-            "pages": [
-              "reference/ingest",
-              "reference/parse",
-              "reference/split",
-              "reference/normalize",
-              "reference/embeddings",
-              "reference/pipeline"
+            "tab": "模块",
+            "groups": [
+              {
+                "group": "上下文与智能",
+                "pages": [
+                  "zh/guides/graphrag",
+                  "zh/guides/ingest",
+                  "zh/guides/llm-integrations",
+                  "zh/guides/pipeline",
+                  "zh/guides/multi-agent",
+                  "zh/guides/decision-intelligence",
+                  "zh/guides/context-graphs",
+                  "zh/guides/agent-memory",
+                  "zh/guides/provenance",
+                  "zh/guides/semantic-extraction",
+                  "zh/guides/ontology",
+                  "zh/guides/reasoning",
+                  "zh/guides/export",
+                  "zh/guides/deduplication",
+                  "zh/guides/mcp-server",
+                  "zh/guides/shacl-validation",
+                  "zh/guides/conflict-resolution",
+                  "zh/guides/change-management",
+                  "zh/guides/policy-engine",
+                  "zh/guides/visualization",
+                  "zh/guides/distance-intelligence",
+                  "zh/guides/graph-analytics"
+                ]
+              }
             ]
           },
           {
-            "group": "Quality & Provenance",
-            "pages": [
-              "reference/deduplication",
-              "reference/conflicts",
-              "reference/provenance",
-              "reference/change_management"
+            "tab": "API 参考",
+            "groups": [
+              {
+                "group": "上下文与智能",
+                "pages": [
+                  "zh/reference/context",
+                  "zh/reference/kg",
+                  "zh/reference/temporal",
+                  "zh/reference/distance",
+                  "zh/reference/semantic_extract",
+                  "zh/reference/reasoning",
+                  "zh/reference/truth_maintenance",
+                  "zh/reference/temporal_truth_maintenance",
+                  "zh/reference/ontology"
+                ]
+              },
+              {
+                "group": "存储",
+                "pages": [
+                  "zh/reference/vector_store",
+                  "zh/reference/graph_store",
+                  "zh/reference/triplet_store"
+                ]
+              },
+              {
+                "group": "数据管道",
+                "pages": [
+                  "zh/reference/ingest",
+                  "zh/reference/parse",
+                  "zh/reference/split",
+                  "zh/reference/normalize",
+                  "zh/reference/embeddings",
+                  "zh/reference/pipeline"
+                ]
+              },
+              {
+                "group": "质量与溯源",
+                "pages": [
+                  "zh/reference/deduplication",
+                  "zh/reference/conflicts",
+                  "zh/reference/provenance",
+                  "zh/reference/change_management"
+                ]
+              },
+              {
+                "group": "输出",
+                "pages": [
+                  "zh/reference/export",
+                  "zh/reference/visualization",
+                  "zh/reference/explorer"
+                ]
+              },
+              {
+                "group": "工具",
+                "pages": [
+                  "zh/reference/llms",
+                  "zh/reference/seed",
+                  "zh/reference/evals",
+                  "zh/reference/utils",
+                  "zh/reference/core",
+                  "zh/reference/mcp_server"
+                ]
+              }
             ]
           },
           {
-            "group": "Output",
-            "pages": [
-              "reference/export",
-              "reference/visualization",
-              "reference/explorer"
-            ]
-          },
-          {
-            "group": "Utilities",
-            "pages": [
-              "reference/llms",
-              "reference/seed",
-              "reference/evals",
-              "reference/utils",
-              "reference/core",
-              "reference/mcp_server"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Cookbook",
-        "groups": [
-          {
-            "group": "Cookbook",
-            "pages": [
-              "cookbook"
+            "tab": "示例",
+            "groups": [
+              {
+                "group": "示例",
+                "pages": [
+                  "zh/cookbook"
+                ]
+              }
             ]
           }
         ]

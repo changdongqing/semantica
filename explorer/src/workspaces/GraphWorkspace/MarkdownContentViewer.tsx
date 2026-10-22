@@ -8,6 +8,7 @@ import {
   type CSSProperties,
   type KeyboardEvent,
 } from "react";
+import { useTranslation } from "react-i18next";
 import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
 import {
@@ -65,6 +66,7 @@ export function MarkdownContentViewer({
   className,
   defaultMode = "preview",
 }: MarkdownContentViewerProps) {
+  const { t } = useTranslation("graph");
   const [activeMode, setActiveMode] = useState<"preview" | "source">(defaultMode);
   const [copied, setCopied] = useState(false);
   const modeBeforeEditRef = useRef<"preview" | "source">(defaultMode);
@@ -249,7 +251,7 @@ export function MarkdownContentViewer({
   return (
     <div className={className} style={viewerContainerStyle}>
       <div style={viewerHeaderStyle}>
-        <div style={{ display: "flex", gap: 4 }} role="tablist" aria-label="Content view mode">
+        <div style={{ display: "flex", gap: 4 }} role="tablist" aria-label={t("markdown.contentViewMode")}>
           <button
             type="button"
             role="tab"
@@ -263,7 +265,7 @@ export function MarkdownContentViewer({
             style={{ ...tabBtnStyle, ...(activeMode === "preview" ? activeTabBtnStyle : {}) }}
           >
             <Eye size={12} style={{ marginRight: 5 }} aria-hidden="true" />
-            Preview
+            {t("markdown.preview")}
           </button>
           <button
             type="button"
@@ -278,22 +280,22 @@ export function MarkdownContentViewer({
             style={{ ...tabBtnStyle, ...(activeMode === "source" ? activeTabBtnStyle : {}) }}
           >
             <Code2 size={12} style={{ marginRight: 5 }} aria-hidden="true" />
-            Source
+            {t("markdown.source")}
           </button>
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
           {hasContent && (
-            <button type="button" onClick={() => void handleCopy()} style={copyBtnStyle} title="Copy raw content">
+            <button type="button" onClick={() => void handleCopy()} style={copyBtnStyle} title={t("markdown.copyTitle")}>
               {copied ? (
                 <>
                   <Check size={12} color="#3fb950" style={{ marginRight: 4 }} aria-hidden="true" />
-                  <span style={{ color: "#3fb950", fontSize: 11 }}>Copied</span>
+                  <span style={{ color: "#3fb950", fontSize: 11 }}>{t("markdown.copied")}</span>
                 </>
               ) : (
                 <>
                   <Copy size={12} style={{ marginRight: 4 }} aria-hidden="true" />
-                  <span style={{ fontSize: 11 }}>Copy</span>
+                  <span style={{ fontSize: 11 }}>{t("markdown.copy")}</span>
                 </>
               )}
             </button>
@@ -301,26 +303,26 @@ export function MarkdownContentViewer({
           {resource && !editing && !loading ? (
             <button type="button" onClick={() => void handleEdit()} style={copyBtnStyle}>
               <Pencil size={12} style={{ marginRight: 4 }} aria-hidden="true" />
-              Edit
+              {t("markdown.edit")}
             </button>
           ) : null}
           {loading ? (
             <button type="button" disabled style={{ ...copyBtnStyle, opacity: 0.65 }}>
               <Loader2 size={12} className="animate-spin" style={{ marginRight: 4 }} aria-hidden="true" />
-              Loading…
+              {t("markdown.loading")}
             </button>
           ) : null}
           {editing ? (
             <>
               <button type="button" onClick={handleCancel} disabled={saving} style={copyBtnStyle}>
                 <X size={12} style={{ marginRight: 4 }} aria-hidden="true" />
-                Cancel
+                {t("markdown.cancel")}
               </button>
               <button
                 type="button"
                 onClick={() => void handleApply()}
                 disabled={saving || !dirty}
-                title={!dirty ? "Make a change before applying" : undefined}
+                title={!dirty ? t("markdown.applyHint") : undefined}
                 style={{ ...saveBtnStyle, opacity: saving || !dirty ? 0.55 : 1 }}
               >
                 {saving ? (
@@ -328,7 +330,7 @@ export function MarkdownContentViewer({
                 ) : (
                   <Check size={12} style={{ marginRight: 4 }} aria-hidden="true" />
                 )}
-                {saving ? "Applying…" : "Apply"}
+                {saving ? t("markdown.applying") : t("markdown.apply")}
               </button>
             </>
           ) : null}
@@ -337,11 +339,11 @@ export function MarkdownContentViewer({
 
       {error ? (
         <div id="markdown-editor-error" role="alert" style={errorStyle}>
-          <span>{error.message}</span>
+          <span>{error.message.startsWith("markdown.") ? t(error.message) : error.message}</span>
           {error.kind === "conflict" ? (
             <button type="button" onClick={() => void editor.reloadLatest()} style={errorActionStyle}>
               <RefreshCw size={12} style={{ marginRight: 4 }} aria-hidden="true" />
-              Reload latest
+              {t("markdown.reloadLatest")}
             </button>
           ) : null}
         </div>
@@ -365,7 +367,7 @@ export function MarkdownContentViewer({
       >
         {activeMode === "source" && editing ? (
           <textarea
-            aria-label="Markdown source"
+            aria-label={t("markdown.sourceAria")}
             aria-describedby={error ? "markdown-editor-error" : undefined}
             aria-invalid={error?.kind === "validation" || undefined}
             value={session?.draft ?? ""}
@@ -375,7 +377,7 @@ export function MarkdownContentViewer({
             style={editorStyle}
           />
         ) : !hasContent ? (
-          <div style={emptyTextStyle}>No content available for this node.</div>
+          <div style={emptyTextStyle}>{t("markdown.noContent")}</div>
         ) : activeMode === "source" ? (
           <pre style={sourcePreStyle}>
             <code style={sourceCodeStyle}>{rawContent}</code>
@@ -397,6 +399,16 @@ export function MarkdownContentViewer({
 // it (issue #1118). The arrow bodies only read the style constants below at call
 // time, so declaring the map before them is safe.
 const REMARK_PLUGINS = [remarkGfm];
+
+function MarkdownImageBadge({ src, alt }: { src?: string; alt?: string }) {
+  const { t } = useTranslation("graph");
+  return (
+    <span style={imageBadgeStyle} title={src || t("markdown.imageTitle")}>
+      <ImageIcon size={12} style={{ marginRight: 5 }} />
+      <span>{`${t("markdown.image")}: ${alt || src || t("markdown.unlabeled")}`}</span>
+    </span>
+  );
+}
 
 const MARKDOWN_COMPONENTS: Components = {
   // C-1: react-markdown passes a HAST `node` prop (the raw AST
@@ -439,12 +451,7 @@ const MARKDOWN_COMPONENTS: Components = {
       </a>
     );
   },
-  img: ({ src, alt }) => (
-    <span style={imageBadgeStyle} title={src || "Image"}>
-      <ImageIcon size={12} style={{ marginRight: 5 }} />
-      <span>Image: {alt || src || "unlabeled"}</span>
-    </span>
-  ),
+  img: ({ src, alt }) => <MarkdownImageBadge src={src} alt={alt} />,
   h1: ({ children }) => <h1 style={h1Style}>{children}</h1>,
   h2: ({ children }) => <h2 style={h2Style}>{children}</h2>,
   h3: ({ children }) => <h3 style={h3Style}>{children}</h3>,

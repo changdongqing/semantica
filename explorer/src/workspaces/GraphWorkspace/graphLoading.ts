@@ -1,3 +1,5 @@
+import type { TFunction } from "i18next";
+
 import type { GraphLoadPhase, GraphLoadProgress, GraphLoadProgressKind, GraphLayoutSource, GraphLayoutState } from "./types";
 
 export const GRAPH_LOAD_STAGE_SEQUENCE: Exclude<GraphLoadPhase, "ready">[] = [
@@ -9,43 +11,34 @@ export const GRAPH_LOAD_STAGE_SEQUENCE: Exclude<GraphLoadPhase, "ready">[] = [
   "stabilizing_layout",
 ];
 
-export function getGraphLoadTitle(phase: GraphLoadPhase): string {
-  switch (phase) {
-    case "bootstrapping":
-      return "Preparing graph session";
-    case "fetching_nodes":
-      return "Loading nodes";
-    case "fetching_edges":
-      return "Loading relationships";
-    case "computing_styling":
-      return "Computing node styling";
-    case "hydrating_scene":
-      return "Hydrating graph scene";
-    case "stabilizing_layout":
-      return "Stabilizing layout";
-    case "ready":
-    default:
-      return "Graph ready";
-  }
+const TITLE_KEYS: Record<GraphLoadPhase, string> = {
+  bootstrapping: "loadingTitle.bootstrapping",
+  fetching_nodes: "loadingTitle.fetchingNodes",
+  fetching_edges: "loadingTitle.fetchingEdges",
+  computing_styling: "loadingTitle.computingStyling",
+  hydrating_scene: "loadingTitle.hydratingScene",
+  stabilizing_layout: "loadingTitle.stabilizingLayout",
+  ready: "loadingTitle.ready",
+};
+
+const STAGE_KEYS: Record<Exclude<GraphLoadPhase, "ready">, string> = {
+  bootstrapping: "loadingStage.prepare",
+  fetching_nodes: "loadingStage.nodes",
+  fetching_edges: "loadingStage.relations",
+  computing_styling: "loadingStage.styling",
+  hydrating_scene: "loadingStage.scene",
+  stabilizing_layout: "loadingStage.layout",
+};
+
+export function getGraphLoadTitle(phase: GraphLoadPhase, t: TFunction): string {
+  return t(TITLE_KEYS[phase] ?? TITLE_KEYS.ready);
 }
 
-export function getGraphLoadStageLabel(phase: Exclude<GraphLoadPhase, "ready">): string {
-  switch (phase) {
-    case "bootstrapping":
-      return "Prepare";
-    case "fetching_nodes":
-      return "Nodes";
-    case "fetching_edges":
-      return "Relations";
-    case "computing_styling":
-      return "Styling";
-    case "hydrating_scene":
-      return "Scene";
-    case "stabilizing_layout":
-      return "Layout";
-    default:
-      return "Stage";
-  }
+export function getGraphLoadStageLabel(
+  phase: Exclude<GraphLoadPhase, "ready">,
+  t: TFunction,
+): string {
+  return t(STAGE_KEYS[phase] ?? "loadingStage.stage");
 }
 
 export function createGraphLoadProgress(input: {
@@ -61,12 +54,12 @@ export function createGraphLoadProgress(input: {
   showGraphBehind?: boolean;
   layoutSource?: GraphLayoutSource;
   layoutState?: GraphLayoutState;
-}): GraphLoadProgress {
+}, t: TFunction): GraphLoadProgress {
   const phaseIndex = GRAPH_LOAD_STAGE_SEQUENCE.indexOf(input.phase as Exclude<GraphLoadPhase, "ready">);
 
   return {
     phase: input.phase,
-    title: getGraphLoadTitle(input.phase),
+    title: getGraphLoadTitle(input.phase, t),
     message: input.message,
     progressKind: input.progressKind,
     loaded: input.loaded ?? null,
